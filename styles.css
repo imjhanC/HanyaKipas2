@@ -1,5 +1,5 @@
 body{
-    margin-top: 20vh;
+    margin-top: 10vh;
 }
 
 nav, .nav-links{
@@ -9,8 +9,8 @@ nav, .nav-links{
 nav{
     position: fixed;
     align-items: center;
-    height: 20vh;
-    background: #28a1f8;
+    height: 10vh;
+    background: #1a1a1a;
     top: 0;
     right: 0;
     left: 0;
@@ -27,6 +27,12 @@ nav{
 
 .logo{
     padding-right: 45%;
+    padding-left: 5%;
+    font-family: "Kanit", sans-serif;
+    font-weight: 700;
+    font-size: 1.3em;
+    font-style: normal;
+    color: white;
 }
 
 #loginlogo{
@@ -147,5 +153,5 @@ footer{
     display: fixed;
     top: 0;
     right: 0;
-    
+
 }
