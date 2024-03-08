@@ -1,0 +1,25 @@
+nav, .nav-links{
+    display: flex;
+}
+
+nav{
+    justify-content: space-around;
+    align-items: center;
+    height: 20vh;
+    background: #28a1f8;
+}
+
+.nav-links{
+    padding-right: 27vh;
+    gap: 3rem;
+    list-style: none;
+    font-size: 1.5rem;
+}
+
+.nav-links,#loginlogo{
+    padding-left: 30%;
+}
+
+.logo{
+    padding-right: 40%;
+}
