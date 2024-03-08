@@ -44,7 +44,7 @@ nav{
     width: 400px;
     padding: 10px;
     font-size: 16px;
-    
+    border-style:solid;
 }
 
 /*Slidershow containers*/
@@ -150,8 +150,10 @@ nav{
 
 /*footer*/
 footer{
-    display: fixed;
-    top: 0;
-    right: 0;
-
+    left : 0;
+    bottom: 0;
+    padding: 20px  0;
+    background-color: black;
+    color: rgb(255, 255, 255);
+    width: 100%;
 }
