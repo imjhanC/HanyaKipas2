@@ -3,10 +3,14 @@ nav, .nav-links{
 }
 
 nav{
-    justify-content: space-around;
+    position: fixed;
     align-items: center;
     height: 20vh;
     background: #28a1f8;
+    top: 0;
+    right: 0;
+    left: 0;
+    
 }
 
 .nav-links{
