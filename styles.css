@@ -25,12 +25,20 @@ nav{
     font-size: 1.5rem;
 }
 
-.nav-links,#loginlogo{
-    padding-left: 30%;
+.logo{
+    padding-right: 45%;
 }
 
-.logo{
-    padding-right: 40%;
+#loginlogo{
+    margin-left: 10%;
+}
+
+/* search bar */
+.nav-links input[type="text"]{
+    width: 400px;
+    padding: 10px;
+    font-size: 16px;
+    
 }
 
 /*Slidershow containers*/
