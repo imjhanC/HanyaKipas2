@@ -42,6 +42,18 @@ nav{
 }
 
 /*Slidershow containers*/
+#slidershow-container {
+    position: fixed;
+    top: 20vh; /* Adjust based on your design */
+    width: 100%;
+    z-index: 999; /* Adjust as needed */
+}
+
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+}
 * {box-sizing:border-box}
 
 /* Slideshow container */
