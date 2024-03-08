@@ -12,7 +12,7 @@
         <img src="../CompanyLogo.PNG" alt="HanyaKipas Logo" style="width: 15%; height: 15%">
 
         <!-- Registration Form -->
-        <form method = "post" action = "../process/index.php">
+        <form method = "post" action = "../index.html">
             <div class="input-box">
                 <input type="text" id="uUsername" placeholder="Username" reqiured>
                 <box-icon name='user' type='solid' ></box-icon>

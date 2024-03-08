@@ -18,7 +18,7 @@
         <img src="../CompanyLogo.PNG" alt="HanyaKipas Logo" style="width: 15%; height: 15%">
 
         <!-- Login Form -->
-        <form method = "post" action = "../process/index.php">
+        <form method = "post" action = "../index.html">
             <div class="input-box">
                 <input type="text" placeholder="Username" reqiured>
                 <box-icon name='user' type='solid' ></box-icon>
