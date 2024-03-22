@@ -52,9 +52,6 @@
 
         <img src="../CompanyLogo.PNG" alt="HanyaKipas Logo">
     </div>
-    <?php
-        include 'footer.php';
-    ?>
 
 </body>
 </html>

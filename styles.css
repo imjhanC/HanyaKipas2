@@ -30,7 +30,7 @@ nav{
     font-size: 1.5rem;
 }
 
-.logo{
+.desktop-nav .text-logo{
     padding-right: 45%;
     padding-left: 5%;
     font-family: "Kanit", sans-serif;
@@ -38,6 +38,7 @@ nav{
     font-size: 1.3em;
     font-style: normal;
     color: white;
+    text-decoration: none;
 }
 
 #loginlogo{
@@ -155,8 +156,10 @@ nav{
 
 /*footer*/
 footer{
+    position: absolute;
     left : 0;
     bottom: 0;
+    z-index: 10;
     padding: 20px  0;
     background-color: black;
     color: rgb(255, 255, 255);

@@ -15,7 +15,7 @@
     <body>
         <!-- navigation bar -->
         <?php
-            include '../Includes/navigationBar.php';
+            include 'Includes/navigationBar.php';
         ?>
 
         <section id =" slidershow-container">
@@ -59,7 +59,7 @@
         <br>
         <br>
         <?php
-            include 'footer.php';
+            include 'Includes/footer.php';
         ?>
         <script src="script.js"></script>
     </body>
