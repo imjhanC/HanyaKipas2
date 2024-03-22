@@ -1,0 +1,109 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+a{
+    text-decoration: none;
+}
+
+ul{
+    list-style: none;
+}
+
+body{
+    background-color: #f4f2f7;
+}
+
+.product-details{
+    max-width: 1500px;
+    width: 95%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 50px auto;
+    min-height: 100vh;
+}
+
+.product-image{
+    background-color: #eeeeee;
+}
+
+.product-text{
+    background-color: #f7f3f3;
+    padding: 60px;
+}
+
+.product-text .product-category{
+    font-style: italic;
+    color: #4e4e4e;
+    font-size: 0.9rem;
+    letter-spacing: 5px;
+}
+
+.product-text h3{
+    color: #252525;
+    font-size: 2.9rem;
+    font-weight: 550;
+    letter-spacing: 2.5px;
+    margin: 15px 0px;
+}
+
+.product-text .product-price{
+    font-size: 1.7rem;
+    color: #242424;
+    font-weight: 450;
+    letter-spacing: 1px;
+}
+
+.product-text p{
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    color: #5a5a5a;
+    margin: 30px 0px;
+}
+
+.product-text strong{
+    color: #252525;
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    border-bottom: 1px solid #25252f;
+}
+
+.product-text .product-size{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.product-text .product-size label{
+    font-size: 1.2rem;
+    font-weight: 500;
+    background-color: #e7e7e7;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    cursor: pointer;
+    user-select: none;
+    border-radius: 25%;
+}
+
+.product-text .product-size label:hover{
+    transform: scale(1.25);
+}
+
+.size-checkbox:checked + .size-label{
+    background-color: #1f2134;
+    color: #ffffff;
+}
+
+.size-checkbox{
+    display: none;
+}
