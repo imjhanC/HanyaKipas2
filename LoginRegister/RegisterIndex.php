@@ -8,9 +8,6 @@
 </head>
 
 <body>
-    <?php
-        include '../Includes/navigationBar.php';
-    ?>
 
     <div class="wrapper">
         <h1>REGISTER</h1>
