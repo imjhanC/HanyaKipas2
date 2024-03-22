@@ -6,16 +6,20 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
     <title>Login page</title>
 
-    <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" href="../LoginRegisterStyle/style.css">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../LoginRegisterStyle/style1.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap">
     
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
 <body>
+    <?php
+        include '../Includes/navigationBar.php';
+    ?>
+    
     <div class="wrapper">
         <h1>LOGIN</h1>
-        <img src="../CompanyLogo.PNG" alt="HanyaKipas Logo" style="width: 15%; height: 15%">
 
         <!-- Login Form -->
         <form method = "post" action = "../index.html">
@@ -45,6 +49,8 @@
                 <p>New User? <a href="../Registration/index.php">Register</a></p>
             </div>
         </form>
+
+        <img src="../CompanyLogo.PNG" alt="HanyaKipas Logo">
     </div>
 </body>
 </html>

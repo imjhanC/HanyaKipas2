@@ -14,18 +14,10 @@
     </head>
     <body>
         <!-- navigation bar -->
-        <nav id="desktop-nav">
-            <div class="logo">
-                <h1>HanyaKipas</h1>
-            </div>
-            <div>
-                <ul class="nav-links">
-                  <input type="text" placeholder="Search">
-                  <img src="shopping-cart.png" alt="shopping cart" height =50 width =50><a href="#xxx"></a></img>
-                  <img src="login.png" alt="shopping cart" height =50 width =50 id="loginlogo"><a href="Login/index.php"></a></img>
-                </ul>
-            </div>
-        </nav>
+        <?php
+            include '../Includes/navigationBar.php';
+        ?>
+
         <section id =" slidershow-container">
             <!-- Slideshow container -->
             <div class="slideshow-container">
