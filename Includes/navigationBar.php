@@ -1,6 +1,6 @@
 <nav id="desktop-nav">
     <div class="text-logo">
-        <a href="../../HanyaKipas2/index.php"><h1>HanyaKipas</h1></a>
+        <h1>HanyaKipas</h1>
     </div>
     <div>
         <ul class="nav-links">
