@@ -10,17 +10,17 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: #d7c9c9;
+    background: #eae3e2;
     background-size: cover;
 }
 
 .wrapper{
     width: 420px;
-    background: #900e0e;
-    border: 2px solid rgba(255, 255, 255, .2);
+    background: #f7f3f3;
+    border: 2px solid rgba(255, 255, 255, 0.06);
     backdrop-filter: blur(20px);
     box-shadow: 0 0 10px rgba(0, 0, 0, .1);
-    color: #ffe3e8;
+    color: #252525;
     border-radius: 25px;
     padding: 40px 50px 45px;
 }
@@ -28,6 +28,7 @@ body{
 .wrapper h1{
     font-size: 36px;
     text-align: center;
+    letter-spacing: 2.5px;
 }
 
 .wrapper img{
@@ -51,15 +52,17 @@ body{
     background: transparent;
     border: none;
     outline: none;
-    border: 2px solid rgba(255, 255, 255, .2);
+    border: 2px solid rgba(184, 193, 255, 0.431);
     border-radius: 40px;
     font-size: 16px;
-    color: #6f6f6f;
+    color: #000000;
     padding: 20px 45px 20px 20px;
 }
 
 .input-box input::placeholder{
-    color: #6f6f6f;
+    font-style: italic;
+    color: #656565;
+    letter-spacing: 1px;
 }
 
 .input-box box-icon{
@@ -83,11 +86,14 @@ body{
 }
 
 .remember-forget a{
-    color: #ffffff;
+    font-weight: 600;
+    color: #252525;
     text-decoration: none;
 }
 
 .remember-forget a:hover{
+    font-weight: 600;
+    transform: scale(1.05);
     text-decoration: underline;
 }
 
@@ -112,12 +118,13 @@ body{
 }
 
 .register-link p a{
-    color: #ffffff;
+    color: #252525;
     text-decoration: none;
     font-weight: 600;
 }
 
 .register-link p a:hover{
+    font-weight: 600;
     text-decoration: underline;
 }
 
