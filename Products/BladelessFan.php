@@ -64,5 +64,10 @@
                 $('.size-checkbox').not(this).prop('checked', false);
             });
         </script>
+
+        <?php
+            include 'footer.php';
+        ?>
+        
     </body>
 </html>

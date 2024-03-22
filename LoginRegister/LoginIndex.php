@@ -7,7 +7,7 @@
     <title>Login page</title>
 
     <link rel="stylesheet" href="../styles.css">
-    <link rel="stylesheet" href="../LoginRegisterStyle/style1.css">
+    <link rel="stylesheet" href="LoginRegisterStyle/style1.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap">
     
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -46,11 +46,15 @@
             <button type="submit" class="btn">Login</button>
 
             <div class="register-link">
-                <p>New User? <a href="../Registration/index.php">Register</a></p>
+                <p>New User? <a href="RegisterIndex.php">Register</a></p>
             </div>
         </form>
 
         <img src="../CompanyLogo.PNG" alt="HanyaKipas Logo">
     </div>
+    <?php
+        include 'footer.php';
+    ?>
+
 </body>
 </html>

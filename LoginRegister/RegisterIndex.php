@@ -3,7 +3,7 @@
 <head>
     <title>HanyaKipas</title>
     <link rel="stylesheet" href="../styles.css">
-    <link rel="stylesheet" href="../LoginRegisterStyle/style1.css">
+    <link rel="stylesheet" href="LoginRegisterStyle/style1.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
@@ -40,7 +40,7 @@
             <button type="submit" class="btn">Register</button>
 
             <div class="register-link">
-                <p>Registered User? <a href="../Login/index.php">Login</a></p>
+                <p>Registered User? <a href="LoginIndex.php">Login</a></p>
             </div>
         </form>
         

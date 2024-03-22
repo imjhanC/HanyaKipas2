@@ -10,13 +10,13 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: seagreen;
+    background: #d7c9c9;
     background-size: cover;
 }
 
 .wrapper{
     width: 420px;
-    background: purple;
+    background: #900e0e;
     border: 2px solid rgba(255, 255, 255, .2);
     backdrop-filter: blur(20px);
     box-shadow: 0 0 10px rgba(0, 0, 0, .1);
@@ -54,12 +54,12 @@ body{
     border: 2px solid rgba(255, 255, 255, .2);
     border-radius: 40px;
     font-size: 16px;
-    color: #ffffff;
+    color: #6f6f6f;
     padding: 20px 45px 20px 20px;
 }
 
 .input-box input::placeholder{
-    color: #ffffff;
+    color: #6f6f6f;
 }
 
 .input-box box-icon{
