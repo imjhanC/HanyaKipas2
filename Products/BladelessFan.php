@@ -10,9 +10,12 @@
         <!-- StyleSheets -->
         <link rel="stylesheet" href="../styles.css">
         <link rel="stylesheet" href="ProductsStyle/style1.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap">
+
     </head>
     <body>
         <?php
@@ -22,7 +25,25 @@
         <section class="product-page">
             <div class="product-details">
                 <div class="product-image">
+                    <div class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img src="ProductsImages/BladelessFan1.jpg">
+                            </div>
 
+                            <div class="swiper-slide">
+                                <img src="ProductsImages/BladelessFan2.jpg">
+                            </div>
+
+                            <div class="swiper-slide">
+                                <img src="ProductsImages/BladelessFan3.jpg">
+                            </div>
+                        </div>
+                        <div class="slider-btn">
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-button-next"></div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="product-text">
@@ -53,20 +74,51 @@
                             <label for="size-5" class="size-label">5"</label>
                         </div>
                     </div>
+                    <div class="product-btn">
+                        <a href="xxx" class="add-to-cart">Add To Cart</a>
+                    </div>
+
+                    <a href="../ContactUs.php" class="help-btn">Need Any Help?</a>
                 </div>
             </div>
         </section>
-        
+         <!-- JQuery -->
         <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 
+        <!-- Swiper -->
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+        <!-- Checkbox sselector -->
         <script type="text/javascript">
             $('.size-checkbox').on('change', function(){
                 $('.size-checkbox').not(this).prop('checked', false);
             });
         </script>
-        <?php
-            include '../Includes/footer.php';
-        ?>
-        
+
+        <!-- Initialize Swiper -->
+        <script>
+            var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 1,
+            spaceBetween: 10,
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            breakpoints: {
+                450: {
+                slidesPerView: 2,
+                spaceBetween: 1,
+                },
+                820: {
+                slidesPerView: 1,
+                spaceBetween: 0,
+                },
+                1024: {
+                slidesPerView: 2,
+                spaceBetween: 1,
+                },
+            },
+            });
+        </script>
     </body>
 </html>
