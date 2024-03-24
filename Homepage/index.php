@@ -22,7 +22,7 @@
         <!-- navigation bar -->
         <nav id="desktop-nav">
             <div class="text-logo">
-                 <h1>HanyaKipas</h1>
+                <img src ="logo.png" width =150px height =90px></img>
             </div>
             <div>
                 <ul class="nav-links">
