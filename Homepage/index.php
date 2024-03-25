@@ -73,7 +73,7 @@
                         
                     </div>
                     <a href="#xxx"><img src="shopping-cart.png" alt="shopping cart" height =50 width =50></a></img>
-                    <a href="../../HanyaKipas2/LoginRegister/LoginIndex.php"><img src="login.png" alt="shopping cart" height =50 width =50 id="loginlogo"></a></img>
+                    <a href="../../HanyaKipas/LoginRegister/LoginIndex.php"><img src="login.png" alt="shopping cart" height =50 width =50 id="loginlogo"></a></img>
                 </ul>
             </div>
         </nav>
