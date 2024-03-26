@@ -47,7 +47,7 @@
             </div>
         </form>
 
-        <img src="../CompanyLogo.PNG" alt="HanyaKipas Logo">
+        <img src="../logo_with_name-removebg-preview.png" alt="HanyaKipas Logo">
     </div>
 
 </body>
