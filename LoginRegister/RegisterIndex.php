@@ -13,7 +13,7 @@
         <h1>Register an Account</h1>
 
         <!-- Registration Form -->
-        <form method = "post" action = "../index.html">
+        <form method = "post" action = "../index.html" method="POST">
             <div class="input-box">
                 <input type="text" id="uUsername" placeholder="Username" required>
                 <box-icon name='user' type='solid' ></box-icon>
