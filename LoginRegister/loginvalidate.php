@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $servername = "localhost:3308";
         $db_username = "root";
         $db_password = "";
-        $dbname = "user";
+        $dbname = "hanyakipas";
 
         $conn = new mysqli($servername, $db_username, $db_password, $dbname);
 
@@ -44,9 +44,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $conn->close();
     } else {
         // If username or password is blank, display error
-        echo "<div id="username-error" style="color: red;"> 
-                    <h1>Please fill in your username !</h1>
-                </div>";
+        echo "<div id='username-error' style='color: red;'> 
+                    <h1>Please fill in  your username !</h1>
+            </div>";
+
+        echo "<div id='password-error' style='color: red;'>
+                    <h1>Please fill in your password !</h1>
+            </div>";
     }
 }
 ?>
