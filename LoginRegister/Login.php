@@ -4,13 +4,14 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+    <link rel="stylesheet" href="loginstyle.css">
     <title>Login page</title>
 </head>
 <body>
     <form id="loginPage" method="POST">
         <label for="username">Username / Email Address</label>
         <input type="text" id="username" name="username" >
-        <div id="username-error" style="color: red;"> 
+        <div id="username-error"> 
             <?php
                 if ($_SERVER["REQUEST_METHOD"] == "POST" && empty($_POST['username'])) {
                     echo "<h1>Please fill in your username !</h1>";
@@ -20,7 +21,7 @@
 
         <label for="password">Password</label>
         <input type="password" id="password" name="password">
-        <div id="password-error" style="color: red;">
+        <div id="password-error">
             <?php
                 if ($_SERVER["REQUEST_METHOD"] == "POST" && empty($_POST['password'])) {
                     echo "<h1>Please fill in your password !</h1>";
@@ -32,7 +33,7 @@
             <?php
                 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['username']) && isset($_POST['password'])) {
                     if (empty($_POST['username']) && empty($_POST['password'])) {
-                        echo "<p>Please fill in your username and password !</p>";
+                        echo "<p id='fillinUsernameandPassword'>Please fill in your username and password !</p>";
                     } else {
                         $username = $_POST['username'];
                         $password = $_POST['password'];
@@ -64,7 +65,7 @@
                             exit; // Important to stop further execution of PHP script after redirecting
                         } else {
                             // User does not exist, display "No such account" message
-                            echo "<p>No such account</p>";
+                            echo "<p id='NoSuchAccount'>No such account</p>";
                         }
 
                         // Close database connection
