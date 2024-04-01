@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
     <head>
         <link rel="stylesheet" href="styleGUI.css">
@@ -8,9 +9,12 @@
 				<form action="#">
 					<h1>Create Account</h1>
 					<span>You may use your name and email as your username !</span>
-					<input type="text" placeholder="Name" />
+					<input type="text" placeholder="Username" />
+					<p id ="username-error"></p>
 					<input type="email" placeholder="Email" />
+					<p id ="email-error"></p>
 					<input type="password" placeholder="Password" />
+					<p id ="password-error"></p>
 					<button>Sign Up</button>
 				</form>
 			</div>
