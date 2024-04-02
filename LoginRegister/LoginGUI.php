@@ -18,7 +18,7 @@
             </form>
         </div>
         <div class="form-container sign-in-container">
-            <form id="signInForm" action="#">
+            <form id="signInForm" action="#" method="POST">
                 <h1>Sign in</h1>
                 <span>Note! You may use your username or email to sign in</span>
                 <input type="text" name="signInUsername" placeholder="Email / Username" required />
@@ -55,7 +55,8 @@
         signInButton.addEventListener('click', () => {
             container.classList.remove("right-panel-active");
         });
-
+        
+        //https://dzone.com/articles/ceate-a-login-system-using-html-php-and-mysql refer here for documnetation
         // Registration form
         document.getElementById("registrationForm").addEventListener("submit", function(event) {
             event.preventDefault();
@@ -98,30 +99,30 @@
             xhr.send("username=" + username + "&email=" + email + "&password=" + password);
         });
 
-        // Sign-in form
         document.getElementById("signInForm").addEventListener("submit", function(event) {
             event.preventDefault();
-            
+
             var signInUsername = document.getElementsByName("signInUsername")[0].value;
             var signInPassword = document.getElementsByName("signInPassword")[0].value;
 
-            // Check if both username/email and password are provided
-            if (!signInUsername || !signInPassword) {
-                document.getElementById("status-message-login").textContent = "Both username/email and password must not be blank";
+            // Check if username/email and password are empty
+            if (signInUsername.trim() === '' || signInPassword.trim() === '') {
+                document.getElementById("status-message-login").textContent = "Please enter your credentials.";
                 return;
             }
 
-            // Send data to PHP for server-side validation
+            // Send data to PHP for server-side validation and database operations
             var xhr = new XMLHttpRequest();
             xhr.onreadystatechange = function() {
                 if (xhr.readyState == XMLHttpRequest.DONE) {
                     var response = xhr.responseText;
-                    if (response === "Sign in successful") {
-                        // Redirect to hi.php if sign-in is successful
-                        window.location.href = "../../HanyaKipas/Homepage/index.php";
-                    } else {
-                        // Display error message if sign-in fails
-                        document.getElementById("status-message-login").textContent = response;
+                    if (response === "Valid") {
+                        // Redirect user to hi.php
+                        window.location.href = "../Homepage/index.php";
+                    } else if (response === "InvalidPassword") {
+                        document.getElementById("status-message-login").textContent = "Password is not valid.";
+                    } else if (response === "NoUser") {
+                        document.getElementById("status-message-login").textContent = "No such user account.";
                     }
                 }
             };
@@ -129,6 +130,7 @@
             xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
             xhr.send("signInUsername=" + signInUsername + "&signInPassword=" + signInPassword);
         });
+
     </script>
 </body>
 </html>
