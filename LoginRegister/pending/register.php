@@ -16,20 +16,31 @@ $email = $_POST['email'];
 $password = $_POST['password'];
 
 // Check if username already exists
-$sql = "SELECT * FROM user WHERE username='$username'";
+// Check if username or email already exists
+$sql = "SELECT * FROM user WHERE username='$username' OR emailaddress='$email'";
 $result = $conn->query($sql);
+
 if ($result->num_rows > 0) {
-    echo "Username has been taken";
+    $errorMessages = [];
+
+    while($row = $result->fetch_assoc()) {
+        if ($row['username'] === $username) {
+            $errorMessages[] = "The username has been taken";
+        }
+        if ($row['emailaddress'] === $email) {
+            $errorMessages[] = "This email address is already registered";
+        }
+    }
+
+    // Construct the error message based on the matched values
+    if (count($errorMessages) === 2) {
+        echo "This account is already existed";
+    } else {
+        echo implode(" and ", $errorMessages);
+    }
     exit();
 }
 
-// Check if email already exists
-$sql = "SELECT * FROM user WHERE emailaddress='$email'";
-$result = $conn->query($sql);
-if ($result->num_rows > 0) {
-    echo "This email address is already registered";
-    exit();
-}
 
 // Insert new user into database
 $sql = "INSERT INTO user (username, emailaddress, password) VALUES ('$username', '$email', '$password')";
