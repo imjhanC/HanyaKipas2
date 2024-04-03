@@ -9,3 +9,12 @@ CREATE TABLE user{
     PRIMARY KEY (`username`).
     UNIQUE KEY `emailaddress` (`emailaddress`)
 }
+
+CREATE TABLE product{
+    `pid` INT(10) AUTO_INCREMENT PRIMARY KEY,
+    `name` VARCHAR(255),
+    `price`DOUBLE(4),
+    `type`  VARCHAR(13),
+    `stock` INT(4),
+    `description` TEXT
+}
