@@ -1,0 +1,76 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    margin-top: 10vh;
+}
+
+nav, .nav-links{
+    display: flex;
+}
+
+nav{
+    position: fixed;
+    align-items: center;
+    height: 10vh;
+    background: #1a1a1a;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1000;
+    
+}
+
+.nav-links{
+    padding-right: 27vh;
+    gap: 3rem;
+    list-style: none;
+    font-size: 1.5rem;
+}
+
+/* brand logo */
+.desktop-nav ,.text-logo{
+    padding-right: 45%;
+    padding-left: 5%;
+    font-family: "Kanit", sans-serif;
+    font-weight: 700;
+    font-size: 1.3em;
+    font-style: normal;
+    color: white;
+}
+
+#loginlogo{
+    margin-left: 10%;
+}
+
+.sidenav {
+    height: 100%;
+    width: 160px;
+    position: flex;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 20px;
+  }
+  
+  .sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+  }
+  
+  .sidenav a:hover {
+    color: #f1f1f1;
+  }
+
+  .main {
+    margin-left: 160px; /* Same as the width of the sidenav */
+    font-size: 28px; /* Increased text to enable scrolling */
+    padding: 0px 10px;
+  }

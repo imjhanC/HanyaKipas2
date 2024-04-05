@@ -11,10 +11,12 @@ CREATE TABLE user{
 }
 
 CREATE TABLE product{
-    `pid` INT(10) AUTO_INCREMENT PRIMARY KEY,
-    `name` VARCHAR(255),
-    `price`DOUBLE(4),
-    `type`  VARCHAR(13),
-    `stock` INT(4),
-    `description` TEXT
+    `productID` VARCHAR(50) NOT NULL,
+    `productimage` MEDIUMBLOB,
+    `productprice` VARCHAR(50) NOT NULL,
+    `productname` VARCHAR(50) NOT NULL,
+    `productdesc` VARCHAR(255) NOT NULL,
+    `producttype` VARCHAR(50) NOT NULL
+    UNIQUE KEY `productname` (`productname`).
+    UNIQUE KEY `productID` (`productID`).
 }
