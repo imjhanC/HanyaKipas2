@@ -11,12 +11,10 @@ CREATE TABLE user{
 }
 
 CREATE TABLE product{
-    `productID` VARCHAR(50) NOT NULL,
-    `productimage` MEDIUMBLOB,
+    `productimage` LONGBLOB,
     `productprice` VARCHAR(50) NOT NULL,
     `productname` VARCHAR(50) NOT NULL,
     `productdesc` VARCHAR(255) NOT NULL,
     `producttype` VARCHAR(50) NOT NULL
     UNIQUE KEY `productname` (`productname`).
-    UNIQUE KEY `productID` (`productID`).
 }
