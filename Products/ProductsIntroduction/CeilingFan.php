@@ -18,12 +18,12 @@
 
         <style>
         .swiper-slide img{
-            width: 250px;
-            height: 875px;
+            width: 750px;
+            height: 750px;
             object-position: cover;
         }
         </style>
-
+        
     </head>
     <body>
         <section class="product-header">
@@ -35,27 +35,23 @@
                     <div class="swiper mySwiper">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
-                                <img src="../ProductsImage/BladelessFan/bladelessfan1.png">
+                                <img src="../ProductsImage/CellingFan/ceilingfan1.jpg">
                             </div>
 
                             <div class="swiper-slide">
-                                <img src="../ProductsImage/BladelessFan/bladelessfan2.png">
+                                <img src="../ProductsImage/CellingFan/ceilingfan2.jpg">
                             </div>
 
                             <div class="swiper-slide">
-                                <img src="../ProductsImage/BladelessFan/bladelessfan3.png">
+                                <img src="../ProductsImage/CellingFan/ceilingfan3.jpg">
                             </div>
 
                             <div class="swiper-slide">
-                                <img src="../ProductsImage/BladelessFan/bladelessfan4.png">
+                                <img src="../ProductsImage/CellingFan/ceilingfan4.jpg">
                             </div>
 
                             <div class="swiper-slide">
-                                <img src="../ProductsImage/BladelessFan/bladelessfan5.png">
-                            </div>
-
-                            <div class="swiper-slide">
-                                <img src="../ProductsImage/BladelessFan/bladelessfan6.png">
+                                <img src="../ProductsImage/CellingFan/ceilingfan5.jpg">
                             </div>
                         </div>
                         <div class="slider-btn">
@@ -66,22 +62,22 @@
                 </div>
 
                 <div class="product-text">
-                    <span class="product-category">BLADELESS FAN</span>
-                    <h3>BLF07 Tower Fan Black/Silver</h3>
+                    <span class="product-category">CEILING FAN</span>
+                    <h3>CF69 Ceiling Fan Black/Gold</h3>
 
                     <!-- Use Database to get price -->
-                    <span class="product-price">RM 6969.00</span>
+                    <span class="product-price">RM 42000.00</span>
 
                     <!-- Product Details -->
-                    <p>To make fans work quietly, manufacturers use slow-running motors to spin the blades. This reduces noise but also reduces power, producing weak airflow. To make powerful fans, they use fast motors to spin the blades. But fast motors create more noise. Powerful and quiet is very difficult to achieve in a conventional fan. The new Dyson Cool™ fans have been engineered to be quieter, use less energy – yet generate powerful airflow.</p>
-
+                    <p>Add sleek, modern style to your kitchen or covered porch with this brushed nickel ceiling fan – the CF69 Ceiling Fan. Its nine blades feature a high-fashion rectangular shape that adds unique style to your home. Six energy-efficient speed settings, plus a reverse air flow feature, make it easy to maintain the ideal comfort level all year long, and the remote control allows you to operate the fan and light from anywhere in the room.</p>
+                    
                     <!-- Size == Diameter of Fan head -->
                     <div class="product-size-container">
                         <strong>Select Color:-</strong>
 
                         <div class="product-size">
                             <input type="checkbox" class="size-checkbox" id="size-55">
-                            <label for="size-55" class="size-label">Silver</label>
+                            <label for="size-55" class="size-label">Gold</label>
 
                             <input type="checkbox" class="size-checkbox" id="size-35">
                             <label for="size-35" class="size-label">Black</label>
@@ -92,9 +88,8 @@
                     </div>
 
                     <!-- Product Page -->
-                    <a href="xxx" class="product-page-btn">Back to Product Page</a>
+                    <a href="/xxx" class="product-page-btn">Back to Product Page</a>
 
-                    <!-- ContactUs Page -->
                     <a href="../ContactUs.php" class="help-btn">Need Any Help?</a>
                 </div>
             </div>
@@ -131,7 +126,7 @@
                 spaceBetween: 0,
                 },
                 1024: {
-                slidesPerView: 3,
+                slidesPerView: 1,
                 spaceBetween: 1,
                 },
             },
