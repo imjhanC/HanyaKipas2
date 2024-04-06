@@ -25,21 +25,6 @@
         <br>
         <br>
         <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum asperiores maiores excepturi ex nesciunt id ratione, adipisci quae modi laboriosam, labore placeat, suscipit magni eos exercitationem architecto quaerat hic doloribus.</p>
-        <div class="search-bar">
-            <input type="text" placeholder="Search...">
-            <button>Search</button>
-        </div><div class="search-bar">
-            <input type="text" placeholder="Search...">
-            <div class="dropdown">
-                <button class="dropbtn">Dropdown</button>
-                <div class="dropdown-content">
-                    <a href="#">Option 1</a>
-                    <a href="#">Option 2</a>
-                    <a href="#">Option 3</a>
-                </div>
-            </div>
-            <button>Search</button>
-        </div>
     <div>   
 </body>
 </html>
