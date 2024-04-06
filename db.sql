@@ -18,3 +18,12 @@ CREATE TABLE product{
     `producttype` VARCHAR(50) NOT NULL
     UNIQUE KEY `productname` (`productname`).
 }
+
+
+CREATE TABLE enquiry{
+    `name` VARCHAR(50) NOT NULL,
+    `contactnumber` VARCHAR(50) NOT NULL,
+    `emailaddress` VARCHAR(50) NOT NULL,
+    `enquiry` VARCHAR(50) NOT NULL,
+    `subject` VARCHAR(255) NOT NULL,
+}
