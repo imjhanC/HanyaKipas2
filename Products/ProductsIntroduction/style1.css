@@ -14,14 +14,14 @@ ul{
 }
 
 body{
-    background-color: #f4f2f7;
+    background-color: #f8f6fb;
     padding-bottom: 150px;
 }
 
-.product-header{
+section .product-header{
     align-items: center;
     height: 10vh;
-    background: #bfb7b7;
+    background: #1a1a1a;
     top: 0;
     right: 0;
     left: 0;
@@ -29,6 +29,8 @@ body{
 }
 
 .product-header img{
+    width: 150px;
+    height: 90px;
     margin-left: 5%;
 }
 

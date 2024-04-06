@@ -89,8 +89,6 @@
 
                     <!-- Product Page -->
                     <a href="/xxx" class="product-page-btn">Back to Product Page</a>
-
-                    <a href="../ContactUs.php" class="help-btn">Need Any Help?</a>
                 </div>
             </div>
         </section>

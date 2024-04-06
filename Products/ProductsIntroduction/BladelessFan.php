@@ -93,9 +93,6 @@
 
                     <!-- Product Page -->
                     <a href="xxx" class="product-page-btn">Back to Product Page</a>
-
-                    <!-- ContactUs Page -->
-                    <a href="../ContactUs.php" class="help-btn">Need Any Help?</a>
                 </div>
             </div>
         </section>
