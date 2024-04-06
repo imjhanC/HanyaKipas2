@@ -11,7 +11,7 @@ CREATE TABLE user{
 }
 
 CREATE TABLE product{
-    `productimage` LONGBLOB,
+    `productimage` MEDIUMBLOB,
     `productprice` VARCHAR(50) NOT NULL,
     `productname` VARCHAR(50) NOT NULL,
     `productdesc` VARCHAR(255) NOT NULL,
