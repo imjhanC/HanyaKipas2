@@ -16,7 +16,7 @@
     </nav>
     <div class="sidebar">
         <a href=adminGUI.php>Home</a>
-        <a href=create.php>Create product</a>
+        <a href=createGUI.php>Create product</a>
         <a href=#about>Update product</a>
         <a href=#about>Delete product</a>
         <a href=#about>Preview product page </a>
