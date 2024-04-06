@@ -79,6 +79,35 @@
 		<section id = "contact-us-form">
 			<div id = "how-can-we-help">
 				<h1>How can we help you ?</h1>
+				<br>
+				<br>
+				<form action="xxx">
+					<label for="name">Full name:</label>
+    				<input type="text" id="name" name="name" placeholder="Your full name goes here..">
+					<br>
+					<br>
+					<label for="cnumber">Contact number:</label>
+    				<input type="text" id="cnumber" name="cnumber" placeholder="Contact number goes here..">
+					<br>
+					<br>
+					<label for="email">Email Address:</label>
+    				<input type="text" id="email" name="emailr" placeholder="Email Address goes here..">
+					<br>
+					<br>
+					<label for="enquiry">Purpose:</label>
+    				<select id="enquiry" name="enquiry">
+      					<option value="General enquiry">General Enquiry</option>
+      					<option value="Complaint">Complaint</option>
+      					<option value="Suggestion">Suggestion</option>
+						<option value="Others">Others</option>
+    				</select>
+					<br>
+					<br>
+					<label for="subject">Subject</label>
+    				<textarea id="subject" name="subject" placeholder="Type here.." style="height:200px"></textarea>
+
+    				<input type="submit" value="Submit">
+				</form>
 			</div>
 		</section>
 		<br>
