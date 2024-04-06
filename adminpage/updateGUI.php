@@ -24,10 +24,8 @@
     <div class="info-home">
         <br>
         <br>
-        <h1>Welcome to the HanyaKipas admin page !</h1>
-        <br>
-        <br>
-        <hr>
-    <div>       
+        <h1>Welcome to update page</h1>
+        
+    <div>   
 </body>
 </html>

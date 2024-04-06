@@ -24,10 +24,16 @@
     <div class="info-home">
         <br>
         <br>
-        <h1>Welcome to the HanyaKipas admin page !</h1>
+        <h1>Welcome to Create Product page </h1>
         <br>
         <br>
         <hr>
-    <div>       
+        <br>
+        <form action="upload.php" method="post" enctype="multipart/form-data">
+            Select images to upload:
+            <input type="file" name="files[]" multiple>
+            <input type="submit" value="Upload Images" name="submit">
+        </form>
+    <div>   
 </body>
 </html>
