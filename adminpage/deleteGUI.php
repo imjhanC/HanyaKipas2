@@ -15,7 +15,7 @@
         <!-- Your navigation items here -->
     </nav>
     <div class="sidebar">
-        <a href=adminGUI.php>Home</a>
+    <a href=adminGUI.php>Home</a>
         <a href=createGUI.php>Create product</a>
         <a href=updateGUI.php>Update product</a>
         <a href=deleteGUI.php>Delete product</a>
@@ -24,10 +24,8 @@
     <div class="info-home">
         <br>
         <br>
-        <h1>Welcome to the HanyaKipas admin page !</h1>
-        <br>
-        <br>
-        <hr>
-    <div>       
+        <h1>Delete page </h1>
+        
+    <div>   
 </body>
 </html>
