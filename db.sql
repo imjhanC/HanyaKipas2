@@ -16,6 +16,7 @@ CREATE TABLE product{
     `productname` VARCHAR(50) NOT NULL,
     `productdesc` VARCHAR(255) NOT NULL,
     `producttype` VARCHAR(50) NOT NULL
+    `productqty` INT(11) NOT NULL,
     UNIQUE KEY `productname` (`productname`).
 }
 
@@ -38,4 +39,5 @@ CREATE TABLE order{
     `productname` VARCHAR(50) NOT NULL,
     `productdesc` VARCHAR(255) NOT NULL,
     `producttype` VARCHAR(50) NOT NULL
+    `productqty` INT(11) NOT NULL
 }

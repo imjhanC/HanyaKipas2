@@ -38,23 +38,41 @@
     <section id="list">
         <br>
         <form action="upload.php" method="post" enctype="multipart/form-data">
-            <label for="name">Image name: </label>
-    		<input type="text" id="name" name="name" placeholder="Image name here.." required>
+            <label for="name">Product name: </label>
+    		<input type="text" id="name" name="name" placeholder="Product name here.." required>
+            <br>
+            <br>
+            <label for="price">Product price: </label>
+    		<input type="text" id="price" name="price" placeholder="Product price here..." required>
+            <br>
+            <br>
+            <label for="desc">Product description: </label>
+    		<input type="text" id="desc" name="desc" placeholder="Product description here.." required>
+            <br>
+            <br>
+            <label for="type">Product type:</label>
+    		<select id="type" name="type" required>
+      			<option value="celling fan">Celling fan</option>
+      			<option value="table fan">Table fan</option>
+				<option value="bladeless fan">Bladeless fan</option>
+    		</select>
             <br>
             <br>
             <label for="file">Select Image:</label>
             <input type="file" id="files[]" name="files[]" accept="image/*" required>
+            <br>
+            <br>
             <input type="submit" value="Upload Images" name="submit">
         </form>
         <br>
         <br>
-        <h2>Uploaded Images</h2>
+        <h2>Current available products</h2>
         <table border="1">
             <thead>
                 <tr>
-                    <th>ID</th>
-                    <th>Image Name</th>
-                    <th>Image</th>
+                    <th>Product name</th>
+                    <th>Product image</th>
+                    <th>Product </th>
                     <th>Posted Time</th>
                 </tr>
             </thead>
