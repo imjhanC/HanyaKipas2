@@ -27,3 +27,15 @@ CREATE TABLE enquiry{
     `enquiry` VARCHAR(50) NOT NULL,
     `subject` VARCHAR(255) NOT NULL,
 }
+
+CREATE TABLE order{
+    `customerName` VARCHAR(50) NOT NULL,
+    `customerDesc` VARCHAR(50) NOT NULL,
+    `customerShipAddress` VARCHAR(250) NOT NULL,
+    `customerContactNum` VARCHAR(50) NOT NULL,
+    `productimage` MEDIUMBLOB,
+    `productprice` VARCHAR(50) NOT NULL,
+    `productname` VARCHAR(50) NOT NULL,
+    `productdesc` VARCHAR(255) NOT NULL,
+    `producttype` VARCHAR(50) NOT NULL
+}
