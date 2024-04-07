@@ -24,7 +24,8 @@ if(isset($_POST['submit'])) {
 
         // Execute SQL statement
         if ($conn->query($sql) === TRUE) {
-            echo "Selected images deleted successfully.";
+            echo "<script>window.location = 'deleteGUI.php';</script>";
+            echo "Item delete successfully.";
         } else {
             echo "Error deleting images: " . $conn->error;
         }

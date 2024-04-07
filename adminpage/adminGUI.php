@@ -36,66 +36,7 @@
         <hr>
     <div>    
     <section id="list">
-        <h1>Create product listing</h1>
-        <form action="upload.php" method="post" enctype="multipart/form-data">
-            <label for="name">Image name: </label>
-    		<input type="text" id="name" name="name" placeholder="Image name here.." required>
-            <br>
-            <br>
-            <label for="file">Select Image:</label>
-            <input type="file" id="files[]" name="files[]" accept="image/*" required>
-            <input type="submit" value="Upload Images" name="submit">
-        </form>
-        <br>
-        <br>
-        <h2>Uploaded Images</h2>
-        <table border="1">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Image Name</th>
-                    <th>Image</th>
-                    <th>Posted Time</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php
-                // Database connection
-                $servername = "localhost:3308";
-                $username = "root";
-                $password = ""; // Empty password
-                $dbname = "hanyakipas";
-
-                // Create connection
-                $conn = new mysqli($servername, $username, $password, $dbname);
-
-                // Check connection
-                if ($conn->connect_error) {
-                    die("Connection failed: " . $conn->connect_error);
-                }
-
-                // Fetch images from database
-                $sql = "SELECT id, image_name, image_data, upload_date FROM image";
-                $result = $conn->query($sql);
-
-                // Display images
-                if ($result->num_rows > 0) {
-                    while($row = $result->fetch_assoc()) {
-                        echo "<tr>";
-                        echo "<td>" . $row['id'] . "</td>";
-                        echo "<td>" . $row['image_name'] . "</td>";
-                        echo "<td><img src='data:image/jpeg;base64," . base64_encode($row['image_data']) . "' alt='" . $row['image_name'] . "' style='width: 100px; height: 100px;'></td>";
-                        echo "<td>" . $row['upload_date'] . "</td>";
-                        echo "</tr>";
-                    }
-                } else {
-                    echo "<tr><td colspan='4'>No images uploaded.</td></tr>";
-                }
-
-                $conn->close();
-                ?>
-            </tbody>
-        </table>
+        
     <section>
 </body>
 </html>

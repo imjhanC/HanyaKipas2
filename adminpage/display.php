@@ -2,5 +2,5 @@
 // Your display code here...
 
 // Prompt refresh of adminGUI.php after uploading
-echo "<script>window.location = 'adminGUI.php';</script>";
+echo "<script>window.location = 'createGUI.php';</script>";
 ?>
