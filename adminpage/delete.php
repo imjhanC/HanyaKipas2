@@ -1,39 +1,38 @@
 <?php
-// Database connection
-$servername = "localhost:3308";
-$username = "root";
-$password = ""; // Empty password
-$dbname = "hanyakipas";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
 // Check if the form is submitted
 if(isset($_POST['submit'])) {
-    // Check if any images are selected for deletion
-    if(isset($_POST['delete']) && !empty($_POST['delete'])) {
-        $delete_ids = $_POST['delete']; // Array of image IDs to delete
+    // Database connection
+    $servername = "localhost:3308";
+    $username = "root";
+    $password = ""; // Empty password
+    $dbname = "hanyakipas";
 
-        // Prepare SQL statement for deletion
-        $sql = "DELETE FROM image WHERE id IN (" . implode(',', $delete_ids) . ")";
+    // Create connection
+    $conn = new mysqli($servername, $username, $password, $dbname);
 
-        // Execute SQL statement
-        if ($conn->query($sql) === TRUE) {
-            echo "<script>window.location = 'deleteGUI.php';</script>";
-            echo "Item delete successfully.";
-        } else {
-            echo "Error deleting images: " . $conn->error;
-        }
-    } else {
-        echo "Please select images to delete.";
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
     }
-}
 
-// Close database connection
-$conn->close();
+    // Check if any checkbox is selected
+    if(isset($_POST['delete'])) {
+        // Loop through each selected checkbox and delete the corresponding product
+        foreach($_POST['delete'] as $product_id) {
+            $sql = "DELETE FROM product WHERE id = $product_id";
+            if ($conn->query($sql) !== TRUE) {
+                echo "Error deleting record: " . $conn->error;
+            }
+        }
+        header("Location: deleteGUI.php");
+    } else {
+        echo "No product selected for deletion.";
+    }
+
+    $conn->close();
+} else {
+    // If form is not submitted, redirect back to the admin page
+    header("Location: adminGUI.php");
+    exit;
+}
 ?>

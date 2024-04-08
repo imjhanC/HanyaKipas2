@@ -79,6 +79,7 @@
 		<section id = "contact-us-form">
 			<div id = "how-can-we-help">
 				<h1>How can we help you ?</h1>
+                <br>
 				<br>
 				<br>
 				<form action="xxx">

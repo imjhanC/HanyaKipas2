@@ -15,8 +15,12 @@ if ($conn->connect_error) {
 
 // Handle file uploads
 if(isset($_POST['submit'])) {
-    $files = $_FILES['files'];
-    $image_name = $_POST['name']; // Get image name from form
+    $product_name = $_POST['name'];
+    $product_price = $_POST['price'];
+    $product_desc = $_POST['desc'];
+    $product_type = $_POST['type'];
+    $product_qty = $_POST['qty'];
+    $files = $_FILES['files']; 
 
     foreach ($files['tmp_name'] as $key => $tmp_name) {
         $file_name = $files['name'][$key];
@@ -25,7 +29,7 @@ if(isset($_POST['submit'])) {
         $file_data = addslashes(file_get_contents($file_tmp)); // Read file contents
 
         // Insert file data and image name into database
-        $sql = "INSERT INTO image (image_data, image_name) VALUES ('$file_data', '$image_name')";
+        $sql = "INSERT INTO product (productname, productprice, productdesc, producttype, productqty, productimage) VALUES ('$product_name', '$product_price','$product_desc','$product_type','$product_qty','$file_data')";
         $result = $conn->query($sql);
 
         if(!$result) {
@@ -33,7 +37,7 @@ if(isset($_POST['submit'])) {
         }
     }
 
-    // Redirect to display page after uploading
+    // Redirect to admin page after uploading
     header("Location: display.php");
     exit();
 }

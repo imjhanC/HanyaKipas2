@@ -58,11 +58,15 @@
     		</select>
             <br>
             <br>
+            <label for="qty">Product quantity: </label>
+    		<input type="text" id="qty" name="qty" placeholder="Product quantity here.." required>
+            <br>
+            <br>
             <label for="file">Select Image:</label>
             <input type="file" id="files[]" name="files[]" accept="image/*" required>
             <br>
             <br>
-            <input type="submit" value="Upload Images" name="submit">
+            <input type="submit" value="Upload Product" name="submit">
         </form>
         <br>
         <br>
@@ -70,49 +74,55 @@
         <table border="1">
             <thead>
                 <tr>
+                    <th>ID</th>
                     <th>Product name</th>
+                    <th>Product price</th>
+                    <th>Product description</th>
+                    <th>Product type</th>
+                    <th>Product quantity</th>
                     <th>Product image</th>
-                    <th>Product </th>
-                    <th>Posted Time</th>
                 </tr>
             </thead>
             <tbody>
-                <?php
-                // Database connection
-                $servername = "localhost:3308";
-                $username = "root";
-                $password = ""; // Empty password
-                $dbname = "hanyakipas";
+    <?php
+    // Database connection
+    $servername = "localhost:3308";
+    $username = "root";
+    $password = ""; // Empty password
+    $dbname = "hanyakipas";
 
-                // Create connection
-                $conn = new mysqli($servername, $username, $password, $dbname);
+    // Create connection
+    $conn = new mysqli($servername, $username, $password, $dbname);
 
-                // Check connection
-                if ($conn->connect_error) {
-                    die("Connection failed: " . $conn->connect_error);
-                }
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
 
-                // Fetch images from database
-                $sql = "SELECT id, image_name, image_data, upload_date FROM image";
-                $result = $conn->query($sql);
+    // Fetch products from database
+    $sql = "SELECT id ,productname, productprice, productdesc, producttype, productqty, productimage FROM product";
+    $result = $conn->query($sql);
 
-                // Display images
-                if ($result->num_rows > 0) {
-                    while($row = $result->fetch_assoc()) {
-                        echo "<tr>";
-                        echo "<td>" . $row['id'] . "</td>";
-                        echo "<td>" . $row['image_name'] . "</td>";
-                        echo "<td><img src='data:image/jpeg;base64," . base64_encode($row['image_data']) . "' alt='" . $row['image_name'] . "' style='width: 100px; height: 100px;'></td>";
-                        echo "<td>" . $row['upload_date'] . "</td>";
-                        echo "</tr>";
-                    }
-                } else {
-                    echo "<tr><td colspan='4'>No images uploaded.</td></tr>";
-                }
+    // Display products
+    if ($result->num_rows > 0) {
+        while($row = $result->fetch_assoc()) {
+            echo "<tr>";
+            echo "<td>" . $row['id'] . "</td>";
+            echo "<td>" . $row['productname'] . "</td>";
+            echo "<td>" . $row['productprice'] . "</td>";
+            echo "<td>" . $row['productdesc'] . "</td>";
+            echo "<td>" . $row['producttype'] . "</td>";
+            echo "<td>" . $row['productqty'] . "</td>";
+            echo "<td><img src='data:image/jpeg;base64," . base64_encode($row['productimage']) . "' style='width: 100px; height: 100px;' /></td>";
+            echo "</tr>";
+        }
+    } else {
+        echo "<tr><td colspan='7'>No products available.</td></tr>";
+    }
 
-                $conn->close();
-                ?>
-            </tbody>
+    $conn->close();
+    ?>
+</tbody>
         </table>
     <section>
 </body>

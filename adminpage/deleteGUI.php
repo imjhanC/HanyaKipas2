@@ -43,9 +43,12 @@
                 <tr>
                     <th></th>
                     <th>ID</th>
-                    <th>Image Name</th>
-                    <th>Image</th>
-                    <th>Posted Time</th>
+                    <th>Product name</th>
+                    <th>Product price</th>
+                    <th>Product description</th>
+                    <th>Product type</th>
+                    <th>Product quantity</th>
+                    <th>Product image</th>
                 </tr>
             </thead>
             <tbody>
@@ -65,7 +68,7 @@
                 }
 
                 // Fetch images from database
-                $sql = "SELECT id, image_name, image_data, upload_date FROM image";
+                $sql = "SELECT id,productname, productprice, productdesc, producttype, productqty, productimage FROM product";
                 $result = $conn->query($sql);
 
                 // Display images
@@ -74,13 +77,16 @@
                         echo "<tr>";
                         echo "<td><input type='checkbox' class='checkbox' name='delete[]' value='" . $row['id'] . "'></td>";
                         echo "<td>" . $row['id'] . "</td>";
-                        echo "<td>" . $row['image_name'] . "</td>";
-                        echo "<td><img src='data:image/jpeg;base64," . base64_encode($row['image_data']) . "' alt='" . $row['image_name'] . "' style='width: 100px; height: 100px;'></td>";
-                        echo "<td>" . $row['upload_date'] . "</td>";
+                        echo "<td>" . $row['productname'] . "</td>";
+                        echo "<td>" . $row['productprice'] . "</td>";
+                        echo "<td>" . $row['productdesc'] . "</td>";
+                        echo "<td>" . $row['producttype'] . "</td>";
+                        echo "<td>" . $row['productqty'] . "</td>";
+                        echo "<td><img src='data:image/jpeg;base64," . base64_encode($row['productimage'])  . "' alt='" . $row['productname'] . "' style='width: 100px; height: 100px;' /></td>";
                         echo "</tr>";
                     }
                 } else {
-                    echo "<tr><td colspan='5'>No images uploaded.</td></tr>";
+                    echo "<tr><td colspan='7'>No images uploaded.</td></tr>";
                 }
 
                 $conn->close();
@@ -88,7 +94,7 @@
             </tbody>
         </table>
         <br>
-        <input type="submit" name="submit" value="Delete Selected Images">
+        <input type="submit" name="submit" value="Delete selected product">
     </form>
 
     <script>

@@ -10,15 +10,16 @@ CREATE TABLE user{
     UNIQUE KEY `emailaddress` (`emailaddress`)
 }
 
-CREATE TABLE product{
-    `productimage` MEDIUMBLOB,
-    `productprice` VARCHAR(50) NOT NULL,
-    `productname` VARCHAR(50) NOT NULL,
-    `productdesc` VARCHAR(255) NOT NULL,
-    `producttype` VARCHAR(50) NOT NULL
-    `productqty` INT(11) NOT NULL,
-    UNIQUE KEY `productname` (`productname`).
-}
+CREATE TABLE product (
+    productname VARCHAR(50) NOT NULL,
+    productprice INT(11) NOT NULL,
+    productdesc VARCHAR(255) NOT NULL,
+    producttype VARCHAR(50) NOT NULL,
+    productqty INT(11) NOT NULL,
+    productimage MEDIUMBLOB,
+    UNIQUE KEY productname (productname)
+);
+
 
 
 CREATE TABLE enquiry{
@@ -35,7 +36,7 @@ CREATE TABLE order{
     `customerShipAddress` VARCHAR(250) NOT NULL,
     `customerContactNum` VARCHAR(50) NOT NULL,
     `productimage` MEDIUMBLOB,
-    `productprice` VARCHAR(50) NOT NULL,
+    `productprice` INT(11) NOT NULL,
     `productname` VARCHAR(50) NOT NULL,
     `productdesc` VARCHAR(255) NOT NULL,
     `producttype` VARCHAR(50) NOT NULL
