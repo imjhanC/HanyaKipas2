@@ -11,12 +11,33 @@ CREATE TABLE user{
 }
 
 CREATE TABLE product{
-    `productID` VARCHAR(50) NOT NULL,
     `productimage` MEDIUMBLOB,
     `productprice` VARCHAR(50) NOT NULL,
     `productname` VARCHAR(50) NOT NULL,
     `productdesc` VARCHAR(255) NOT NULL,
     `producttype` VARCHAR(50) NOT NULL
+    `productqty` INT(11) NOT NULL,
     UNIQUE KEY `productname` (`productname`).
-    UNIQUE KEY `productID` (`productID`).
+}
+
+
+CREATE TABLE enquiry{
+    `name` VARCHAR(50) NOT NULL,
+    `contactnumber` VARCHAR(50) NOT NULL,
+    `emailaddress` VARCHAR(50) NOT NULL,
+    `enquiry` VARCHAR(50) NOT NULL,
+    `subject` VARCHAR(255) NOT NULL,
+}
+
+CREATE TABLE order{
+    `customerName` VARCHAR(50) NOT NULL,
+    `customerDesc` VARCHAR(50) NOT NULL,
+    `customerShipAddress` VARCHAR(250) NOT NULL,
+    `customerContactNum` VARCHAR(50) NOT NULL,
+    `productimage` MEDIUMBLOB,
+    `productprice` VARCHAR(50) NOT NULL,
+    `productname` VARCHAR(50) NOT NULL,
+    `productdesc` VARCHAR(255) NOT NULL,
+    `producttype` VARCHAR(50) NOT NULL
+    `productqty` INT(11) NOT NULL
 }

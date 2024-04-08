@@ -18,12 +18,12 @@
 
         <style>
         .swiper-slide img{
-            width: 250px;
-            height: 875px;
+            width: 750px;
+            height: 750px;
             object-position: cover;
         }
         </style>
-
+        
     </head>
     <body>
         <section class="product-header">
@@ -35,27 +35,23 @@
                     <div class="swiper mySwiper">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
-                                <img src="../ProductsImage/BladelessFan/bladelessfan1.png">
+                                <img src="../ProductsImage/TableFan/tablefan1.webp">
                             </div>
 
                             <div class="swiper-slide">
-                                <img src="../ProductsImage/BladelessFan/bladelessfan2.png">
+                                <img src="../ProductsImage/TableFan/tablefan2.webp">
                             </div>
 
                             <div class="swiper-slide">
-                                <img src="../ProductsImage/BladelessFan/bladelessfan3.png">
+                                <img src="../ProductsImage/TableFan/tablefan3.webp">
                             </div>
 
                             <div class="swiper-slide">
-                                <img src="../ProductsImage/BladelessFan/bladelessfan4.png">
+                                <img src="../ProductsImage/TableFan/tablefan4.webp">
                             </div>
 
                             <div class="swiper-slide">
-                                <img src="../ProductsImage/BladelessFan/bladelessfan5.png">
-                            </div>
-
-                            <div class="swiper-slide">
-                                <img src="../ProductsImage/BladelessFan/bladelessfan6.png">
+                                <img src="../ProductsImage/TableFan/tablefan5.webp">
                             </div>
                         </div>
                         <div class="slider-btn">
@@ -66,22 +62,22 @@
                 </div>
 
                 <div class="product-text">
-                    <span class="product-category">BLADELESS FAN</span>
-                    <h3>BLF07 Tower Fan Black/Silver</h3>
+                    <span class="product-category">TABLE FAN</span>
+                    <h3>TF11 Table Fan Black/White</h3>
 
                     <!-- Use Database to get price -->
-                    <span class="product-price">RM 6969.00</span>
+                    <span class="product-price">RM 56.00</span>
 
                     <!-- Product Details -->
-                    <p>To make fans work quietly, manufacturers use slow-running motors to spin the blades. This reduces noise but also reduces power, producing weak airflow. To make powerful fans, they use fast motors to spin the blades. But fast motors create more noise. Powerful and quiet is very difficult to achieve in a conventional fan. The new Dyson Cool™ fans have been engineered to be quieter, use less energy – yet generate powerful airflow.</p>
-
+                    <p>The innovative fan guard design creates dual-channel air, effectively increasing the pressure of the air. The ball bearing motor provides large air volume than the usual motor, as well as more durable. The 5 fan blades design, together with the fan guard design, brings larger air volume to make coolness and torsion angle brings more air volume.</p>
+                    
                     <!-- Size == Diameter of Fan head -->
                     <div class="product-size-container">
                         <strong>Select Color:-</strong>
 
                         <div class="product-size">
                             <input type="checkbox" class="size-checkbox" id="size-55">
-                            <label for="size-55" class="size-label">Silver</label>
+                            <label for="size-55" class="size-label">White</label>
 
                             <input type="checkbox" class="size-checkbox" id="size-35">
                             <label for="size-35" class="size-label">Black</label>
@@ -128,7 +124,7 @@
                 spaceBetween: 0,
                 },
                 1024: {
-                slidesPerView: 3,
+                slidesPerView: 1,
                 spaceBetween: 1,
                 },
             },

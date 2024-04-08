@@ -1,6 +1,7 @@
 *{
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body{
@@ -20,16 +21,112 @@ nav{
     right: 0;
     left: 0;
     z-index: 1000;
-    
 }
 
-.nav-links{
-    padding-right: 27vh;
-    gap: 3rem;
-    list-style: none;
-    font-size: 1.5rem;
+/*sidebar*/
+.sidebar {
+    height: 100%;
+    position: fixed;
+    top: 10vh; /* Height of the navigation */
+    left: 0;
+    width: 210px; /* Adjust width as needed */
+    height: calc(100vh - 10vh); /* Height of viewport minus navigation */
+    background-color: #333; /* Sidebar background color */
+    color: #fff; /* Text color */
+    padding: 20px; /* Padding for content inside the sidebar */
 }
 
+.sidebar a {
+    padding: 30px 0;
+    text-decoration: none;
+    font-size: 20px;
+    color: #000000;
+    display: block;
+    background-color:#00ffaa;
+    border-radius: 20px; /* Adjust border-radius as needed */
+    border: 2px solid #00ffaa; /* Adjust border size and color as needed */
+    margin-bottom: 30px; /* Adjust spacing between links */
+    text-align: center;
+}
+
+.sidebar a:hover {
+    color: #0066ff;
+}
+
+
+/* main*/
+.info-home{
+    margin-left: 210px;
+    padding: 0px 10px;
+}
+
+.search-bar {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input[type="text"] {
+    padding: 5px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    width: 200px;
+    margin-right: 10px;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropbtn {
+    padding: 5px;
+    background-color: #0080ff;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: #000;
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.search-bar button {
+    padding: 5px;
+    background-color: #0080ff;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.search-bar button:hover {
+    background-color: #0056b3;
+}
+  
 /* brand logo */
 .desktop-nav ,.text-logo{
     padding-right: 45%;
@@ -45,32 +142,10 @@ nav{
     margin-left: 10%;
 }
 
-.sidenav {
-    height: 100%;
-    width: 160px;
-    position: flex;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: #111;
-    overflow-x: hidden;
-    padding-top: 20px;
-  }
-  
-  .sidenav a {
-    padding: 6px 8px 6px 16px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #818181;
-    display: block;
-  }
-  
-  .sidenav a:hover {
-    color: #f1f1f1;
-  }
-
-  .main {
-    margin-left: 160px; /* Same as the width of the sidenav */
-    font-size: 28px; /* Increased text to enable scrolling */
-    padding: 0px 10px;
-  }
+.info-home{
+    color:#0080ff;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
