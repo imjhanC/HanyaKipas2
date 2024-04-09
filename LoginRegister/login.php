@@ -30,6 +30,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($signInPassword === $stored_password) {
             // Password is valid
             echo "Valid";
+
+            session_start();
+            $_SESSION['login'] = "1";
         } else {
             // Password is not valid
             echo "InvalidPassword";
@@ -39,4 +42,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "NoUser";
     }
 }
+
+$conn->close();
 ?>
