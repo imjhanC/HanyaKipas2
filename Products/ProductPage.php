@@ -76,15 +76,6 @@
             </div>
         </nav>
 		<br>
-        <div class="sidebar">
-            <a href=adminGUI.php>Home</a>
-            <a href=createGUI.php>Create product</a>
-            <a href=updateGUI.php>Update product</a>
-            <a href=deleteGUI.php>Delete product</a>
-            <a href=#about>Preview product page </a>
-        </div>
-		<br>
-		<br>
 		<footer class="footer">
             <div id="copyright">
                 <p>Copyright &#169 HanyaKipas Sdn. Bhd 2024</p>
