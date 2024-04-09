@@ -16,27 +16,90 @@
 <body>
     <nav id="desktop-nav">
         <div class="text-logo">
-            <img src ="logo.png" width =150px height =90px></img>
+            <img src="logo.png" width="150px" height="90px" alt="Logo"></img>
         </div>
         <!-- Your navigation items here -->
     </nav>
     <div class="sidebar">
-        <a href=adminGUI.php>Home</a>
-        <a href=createGUI.php>Create product</a>
-        <a href=updateGUI.php>Update product</a>
-        <a href=deleteGUI.php>Delete product</a>
-        <a href=#about>Preview product page </a>
+        <a href="adminGUI.php">Home</a>
+        <a href="createGUI.php">Create product</a>
+        <a href="updateGUI.php">Update product</a>
+        <a href="deleteGUI.php">Delete product</a>
+        <a href="#about">Preview product page</a>
     </div>
     <div class="info-home">
         <br>
         <br>
-        <h1>Welcome to the HanyaKipas admin page !</h1>
+        <h1>Welcome to the HanyaKipas admin page!</h1>
         <br>
         <br>
         <hr>
-    <div>    
-    <section id="list">
-        
-    <section>
+        <div>
+            <section id="list">
+                <h2> Type of products that is currently available </h2>
+                <br>
+                <!-- Your bar chart goes here -->
+                <canvas id="productChart" width="400" height="100"></canvas>
+            </section>
+        </div>
+    </div>
+
+    <!-- JavaScript code for Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+    <?php
+    // Your database connection code...
+    $servername = "localhost:3308";
+    $username = "root";
+    $password = ""; // Empty password
+    $dbname = "hanyakipas";
+
+    // Create connection
+    $conn = new mysqli($servername, $username, $password, $dbname);
+
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    // Fetch data for chart
+    $sql = "SELECT producttype, COUNT(*) AS count FROM product GROUP BY producttype";
+    $result = $conn->query($sql);
+
+    // Prepare data for chart
+    $productTypes = [];
+    $productCounts = [];
+    while ($row = $result->fetch_assoc()) {
+        $productTypes[] = $row['producttype'];
+        $productCounts[] = $row['count'];
+    }
+
+    // Close connection
+    $conn->close();
+    ?>
+
+    // JavaScript code to render the bar chart using Chart.js
+    var ctx = document.getElementById('productChart').getContext('2d');
+    var productChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: <?php echo json_encode($productTypes); ?>,
+            datasets: [{
+                label: 'Number of Products',
+                data: <?php echo json_encode($productCounts); ?>,
+                backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                borderColor: 'rgba(54, 162, 235, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+    </script>
 </body>
 </html>

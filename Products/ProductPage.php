@@ -76,27 +76,58 @@
             </div>
         </nav>
 		<br>
-        <div class="sidebar">
-            <a href=adminGUI.php>Home</a>
-            <a href=createGUI.php>Create product</a>
-            <a href=updateGUI.php>Update product</a>
-            <a href=deleteGUI.php>Delete product</a>
-            <a href=#about>Preview product page </a>
-        </div>
-		<br>
-		<br>
-		<footer class="footer">
-            <div id="copyright">
-                <p>Copyright &#169 HanyaKipas Sdn. Bhd 2024</p>
-                <p>HanyaKipas Sdn. Bhd || The best fan selling company in Malaysia (Co No.6969)</p>
-            </div>
-            <br>
-            <div id="footerbuttons">
-                <a id="aboutfooter">About HanyaKipas </a>
-                <a id="productfooter">Products</a>
-                <a id="privacypolicyfooter">Privacy Policy</a>
-                <a id="contactUsfooter">Contact Us</a>
-            </div>
-        </footer>
+        <section id="product-class">
+        <!-- Your product images and names here -->
+        <?php
+            $servername = "localhost:3308";
+            $username = "root";
+            $password = ""; // Empty password
+            $dbname = "hanyakipas";
+
+            // Create connection
+            $conn = new mysqli($servername, $username, $password, $dbname);
+
+            // Check connection
+            if ($conn->connect_error) {
+                die("Connection failed: " . $conn->connect_error);
+            }
+
+            // Fetch products from database
+            $sql = "SELECT id ,productname, productprice, productdesc, producttype, productqty, productimage FROM product";
+            $result = $conn->query($sql);
+
+            // Display products
+            if ($result->num_rows > 0) {
+                echo "<div id='product-listing'>";
+                $counter = 0; // Counter to track the number of products
+                while($row = $result->fetch_assoc()) {
+                    echo "<div class='product-card'>";
+                    echo "<img src='data:image/jpeg;base64," . base64_encode($row['productimage']) . "' alt='Product Image' class='product-image'>";
+                    echo "<h1>" . $row['productname'] . "</h1>";
+                    echo "</div>";
+                    $counter++;
+                    // Break the loop after displaying the first four products horizontally
+                    if ($counter >= 4) {
+                        break;
+                    }
+                }
+
+                // Display the rest of the products underneath
+                while($row = $result->fetch_assoc()) {
+                    echo "<div class='product-card'>";
+                    echo "<img src='data:image/jpeg;base64," . base64_encode($row['productimage']) . "' alt='Product Image' class='product-image'>";
+                    echo "<h1>" . $row['productname'] . "</h1>";
+                    echo "</div>";
+                }
+
+                echo "</div>"; // Close #product-listing
+            } else {
+                echo "No products found";
+            }
+
+            // Close connection
+            $conn->close();
+        ?>
+    </section>
 	</body>
 </html>

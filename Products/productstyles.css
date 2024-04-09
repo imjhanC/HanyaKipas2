@@ -45,119 +45,6 @@ nav{
     margin-left: 10%;
 }
 
-/* search bar */
-/*.nav-links input[type="text"]{
-    width: 400px;
-    padding: 10px;
-    font-size: 16px;
-    border-style:solid;
-}*/
-
-/*Slidershow containers*/
-.slider {
-    display: flex;
-    overflow: hidden;
-    width: 100%;
-    margin: 0 auto;
-}
-
-.slider img {
-    width: 100%;
-    height: auto;
-    max-height: 820px;
-    flex-shrink: 0;
-    transition: transform 7s ease-in-out; /* Add transition for smooth sliding */
-}
-
-.slide-1 {
-    transform: translateX(0%);
-}
-
-.slide-2 {
-    transform: translateX(-100%);
-}
-
-.slide-3 {
-    transform: translateX(-200%);
-}
-
-
-@keyframes slide {
-    0% {
-        transform: translateX(0%);
-    }
-    33.33% {
-        transform: translateX(-100%);
-    }
-    66.67% {
-        transform: translateX(-200%);
-    }
-    100% {
-        transform: translateX(0%);
-    }
-}
-
-.slider img {
-    animation: slide 10s infinite; /* Adjust timing as needed */
-}
-/* collection section */
-#Collection, .CollectionText {
-	text-align: center;
-	font-family: "Quicksand", sans-serif;
-	font-optical-sizing: auto;
-	font-weight: 500;
-	font-style: normal;
-	font-size: 1.6em;
-}
-
-#ceiling-fan,
-#table-fan,
-#bladeless-fan {
-    border: 5px solid #ccc; /* Add border with a 2px width and color #ccc */
-    border-radius: 5px; /* Add border radius for rounded corners */
-    padding: 0px; /* Add padding for spacing between content and border */
-    margin-bottom: 20px; /* Add margin to create space between fan elements */
-    margin-right: 20px; /* Add horizontal gap between fan elements */
-    display: inline-block; /* Display fan elements as inline blocks */
-	background-color: grey;
-}
-
-#ceiling-fan img,
-#table-fan img,
-#bladeless-fan img {
-    width: 500px; /* Adjust image width as needed */
-    height: auto; /* Maintain aspect ratio */
-    display: block; /* Ensure image is displayed as block element */
-    margin: 0 auto 10px; /* Center image horizontally and add space below */
-}
-
-/* Style the anchor tags */
-#ceiling-fan a,
-#table-fan a,
-#bladeless-fan a {
-    color: white;
-    text-decoration: none;
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #4F95DA;
-    border-radius: 25px;
-    transition: background-color 0.3s ease;
-	margin-bottom: 20px;
-	font-family: "Mulish", sans-serif;
-  	font-optical-sizing: auto;
-  	font-weight: 600;
-  	font-style: normal;
-}
-
-/* Hover effect for anchor tags */
-#ceiling-fan a:hover,
-#table-fan a:hover,
-#bladeless-fan a:hover {
-    background-color: #1a1a1a;
-}
-
-
-
 /*footer*/
 footer{
     left: 0;
@@ -390,33 +277,47 @@ footer,.copyright{
 	grid-area: results;
 	background: hsl(0, 0%, 95%);
 }
-
-/*sidebar*/
-.sidebar {
-    height: 100%;
-    position: fixed;
-    top: 10vh; /* Height of the navigation */
-    left: 0;
-    width: 210px; /* Adjust width as needed */
-    height: calc(100vh - 10vh); /* Height of viewport minus navigation */
-    background-color: #333; /* Sidebar background color */
-    color: #fff; /* Text color */
-    padding: 20px; /* Padding for content inside the sidebar */
+.product-card {
+	border: 5px solid #ccc;
+	border-radius: 5px;
+	padding: 0px;
+	margin-bottom: 20px;
+	margin-right: 20px;
+	display: inline-block;
+	background-color: grey;
 }
 
-.sidebar a {
-    padding: 30px 0;
-    text-decoration: none;
-    font-size: 20px;
-    color: #000000;
-    display: block;
-    background-color:#00ffaa;
-    border-radius: 20px; /* Adjust border-radius as needed */
-    border: 2px solid #00ffaa; /* Adjust border size and color as needed */
-    margin-bottom: 30px; /* Adjust spacing between links */
-    text-align: center;
+.product-card img {
+	width: 500px;
+	height: auto;
+	display: block;
+	margin: 0 auto 10px;
 }
 
-.sidebar a:hover {
-    color: #0066ff;
+.product-card h1 {
+	text-align: center;
+	font-family: "Quicksand", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 500;
+	font-style: normal;
+	font-size: 1.6em;
+	margin-bottom: 0;
+}
+
+.product-card a {
+	color: white;
+	text-decoration: none;
+	display: inline-block;
+	padding: 10px 20px;
+	background-color: #4F95DA;
+	border-radius: 25px;
+	transition: background-color 0.3s ease;
+	font-family: "Mulish", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 600;
+	font-style: normal;
+}
+
+.product-card a:hover {
+	background-color: #1a1a1a;
 }
