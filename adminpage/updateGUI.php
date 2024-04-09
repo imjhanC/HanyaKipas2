@@ -31,178 +31,134 @@
     <div>    
     <section id="list">
     <h2>Update Product</h2>
-        <?php
-        // Database connection
-        $servername = "localhost:3308";
-        $username = "root";
-        $password = ""; // Empty password
-        $dbname = "hanyakipas";
+    <?php
+$servername = "localhost:3308";
+$username = "root";
+$password = ""; // Empty password
+$dbname = "hanyakipas";
 
-        // Create connection
-        $conn = new mysqli($servername, $username, $password, $dbname);
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
 
-        // Check connection
-        if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Check if the form is submitted
+if(isset($_POST['submit'])) {
+    // Check if the update ID is selected
+    if(isset($_POST['update_id'])) {
+        // Get the selected ID
+        $update_id = $_POST['update_id'];
+
+        // Check if any attribute needs to be updated
+        if(!empty($_POST['productname'])) {
+            $productname = $_POST['productname'];
+            $sql = "UPDATE product SET productname = '$productname' WHERE id = $update_id";
+            $conn->query($sql);
         }
 
-        if(isset($_POST['submit']) && isset($_POST['update_id'])) {
-            // Handle form submission to update image
-            $update_id = $_POST['update_id'];
-            
-            // Get the current image data and image name
-            $sql_select = "SELECT id,productname, productprice, productdesc, producttype, productqty, productimage FROM product WHERE id = $update_id";
-            $result_select = $conn->query($sql_select);
-            $row_select = $result_select->fetch_assoc();
-            $current_id = $row_select['id'];
-            $current_productname = $row_select['productname'];
-            $current_productprice = $row_select['productprice'];
-            $current_productdesc = $row_select['productdesc'];
-            $current_producttype = $row_select['producttype'];
-            $current_productqty = $row_select['productqty'];
-            $current_image_data = $row_select['productimage'];
-            
-            // Check if image name is provided
-            if(isset($_POST['id'])) {
-                $id = $_POST['id'];
-            } else {
-                // If image name is not provided, keep the existing name
-                $id = $current_id;
-            }
+        if(!empty($_POST['productprice'])) {
+            $productprice = $_POST['productprice'];
+            $sql = "UPDATE product SET productprice = '$productprice' WHERE id = $update_id";
+            $conn->query($sql);
+        }
 
-            // Check if image name is provided
-            if(isset($_POST['productname'])) {
-                $product_name = $_POST['productname'];
-            } else {
-                // If image name is not provided, keep the existing name
-                $product_name = $current_productname;
-            }
+        if(!empty($_POST['productdesc'])) {
+            $productdesc = $_POST['productdesc'];
+            $sql = "UPDATE product SET productdesc = '$productdesc' WHERE id = $update_id";
+            $conn->query($sql);
+        }
 
-            // Check if image name is provided
-            if(isset($_POST['productprice'])) {
-                $product_price = $_POST['productprice'];
-            } else {
-                // If image name is not provided, keep the existing name
-                $product_price = $current_productprice;
-            }
+        if(!empty($_POST['producttype'])) {
+            $producttype = $_POST['producttype'];
+            $sql = "UPDATE product SET producttype = '$producttype' WHERE id = $update_id";
+            $conn->query($sql);
+        }
 
-            // Check if image name is provided
-            if(isset($_POST['productdesc'])) {
-                $product_desc = $_POST['productdesc'];
-            } else {
-                // If image name is not provided, keep the existing name
-                $product_desc = $current_productdesc;
-            }
+        if(!empty($_POST['productqty'])) {
+            $productqty = $_POST['productqty'];
+            $sql = "UPDATE product SET productqty = '$productqty' WHERE id = $update_id";
+            $conn->query($sql);
+        }
 
-            // Check if image name is provided
-            if(isset($_POST['producttype'])) {
-                $product_type = $_POST['producttype'];
-            } else {
-                // If image name is not provided, keep the existing name
-                $product_type = $current_producttype;
-            }
-
-            if(isset($_POST['productqty'])) {
-                $product_qty = $_POST['productqty'];
-            } else {
-                // If image name is not provided, keep the existing name
-                $product_qty = $current_productqty;
-            }
-
-            // Check if image data is provided
-            if(isset($_FILES['productimage']) && $_FILES['productimage']['size'] > 0) {
-                $product_image = file_get_contents($_FILES['productimage']['tmp_name']);
-            } else {
-                // If image data is not provided, keep the existing data
-                $product_image = $current_image_data;
-            }
-
-            // Update the image in the database
-            $sql_update = "UPDATE product SET id = ?,productname= ? , productprice = ? , productdesc = ? , producttype = ? , productqty = ? , productimage = ?  WHERE id = $update_id";
-            $stmt = $conn->prepare($sql_update);
-            $stmt->bind_param("sssssss", $current_id, $current_productname,$current_productprice, $current_productdesc, $current_producttype , $current_productqty , $current_image_data);
+        if(isset($_FILES['productimage']) && $_FILES['productimage']['size'] > 0) {
+            // Handle uploaded image data
+            $image_data = file_get_contents($_FILES['productimage']['tmp_name']);
+            $sql = "UPDATE product SET productimage = ? WHERE id = $update_id";
+            $stmt = $conn->prepare($sql);
+            $stmt->bind_param("s", $image_data);
             $stmt->execute();
             $stmt->close();
-
-            echo "Product updated successfully.";
         }
+    }
+}
 
-        // Fetch images from database
-        $sql = "SELECT id,productname, productprice, productdesc, producttype, productqty, productimage FROM product";
-        $result = $conn->query($sql);
+// Fetch data to display
+$sql = "SELECT id, productname, productprice, productdesc, producttype, productqty, productimage FROM product";
+$result = $conn->query($sql);
 
-        // Display images
-        if ($result->num_rows > 0) {
-            echo "<form  method='post' enctype='multipart/form-data'>";
-            echo "<table border='1'>";
-            echo "<thead>";
-            echo "<tr>";
-            echo "<th>ID</th>";
-            echo "<th>Product name</th>";
-            echo "<th>Product price</th>";
-            echo "<th>Product description</th>";
-            echo "<th>Product type</th>";
-            echo "<th>Product quantity</th>";
-            echo "<th>Product image</th>";
-            echo "</tr>";
-            echo "</thead>";
-            echo "<tbody>";
+// Display images
+if ($result->num_rows > 0) {
+    echo "<form  method='post' enctype='multipart/form-data'>";
+    echo "<table border='1'>";
+    echo "<thead>";
+    echo "<tr>";
+    echo "<th>ID</th>";
+    echo "<th>Product name</th>";
+    echo "<th>Product price</th>";
+    echo "<th>Product description</th>";
+    echo "<th>Product type</th>";
+    echo "<th>Product quantity</th>";
+    echo "<th>Product image</th>";
+    echo "</tr>";
+    echo "</thead>";
+    echo "<tbody>";
 
-            while($row = $result->fetch_assoc()) {
-                echo "<tr>";
-                echo "<td>" . $row['id'] . "</td>";
-                echo "<td>" . $row['productname'] . "</td>";
-                echo "<td>" . $row['productprice'] . "</td>";
-                echo "<td>" . $row['productdesc'] . "</td>";
-                echo "<td>" . $row['producttype'] . "</td>";
-                echo "<td>" . $row['productqty'] . "</td>";
-                echo "<td><img src='data:image/jpeg;base64," . base64_encode($row['productimage']) . "' style='width: 100px; height: 100px;' /></td>";
-                echo "<td><input type='radio' name='update_id' value='" . $row['id'] . "'></td>";
-                echo "</tr>";
-            }
-            
-            echo "</tbody>";
-            echo "</table>";
+    while($row = $result->fetch_assoc()) {
+        echo "<tr>";
+        echo "<td>" . $row['id'] . "</td>";
+        echo "<td>" . $row['productname'] . "</td>";
+        echo "<td>" . $row['productprice'] . "</td>";
+        echo "<td>" . $row['productdesc'] . "</td>";
+        echo "<td>" . $row['producttype'] . "</td>";
+        echo "<td>" . $row['productqty'] . "</td>";
+        echo "<td><img src='data:image/jpeg;base64," . base64_encode($row['productimage']) . "' style='width: 100px; height: 100px;' /></td>";
+        echo "<td><input type='radio' name='update_id' value='" . $row['id'] . "'></td>";
+        echo "</tr>";
+    }
 
-            echo "<br>";
-            echo "<label for='id'>Product ID: </label>";
-            echo "<input type='text' id='id' name='id' placeholder='New Product ID here..'>";
-            echo "<br>";
-            echo "<br>";
-            echo "<label for='productname'>Product name: </label>";
-            echo "<input type='text' id='productname' name='productname' placeholder='New Product Name here..'>";
-            echo "<br>";
-            echo "<br>";        
-            echo "<label for='productprice'>Product price: </label>";
-            echo "<input type='text' id='productprice' name='productprice' placeholder='New Product Price here..'>";
-            echo "<br>";
-            echo "<br>"; 
-            echo "<label for='productdesc'>Product Description: </label>";
-            echo "<input type='text' id='productdesc' name='productdesc' placeholder='New Product Description here..'>";
-            echo "<br>";
-            echo "<br>"; 
-            echo "<label for='producttype'>Product type: </label>";
-            echo "<select id='producttype' name='producttype'>
-                    <option value='celling fan'>Celling fan</option>
-                    <option value='table fan'>Table fan</option>
-                    <option value='bladeless fan'>Bladeless fan</option>
-                </select>";
-            echo "<br>";
-            echo "<br>"; 
-            echo "<label for='productqty'>Product Quantity: </label>";
-            echo "<input type='text' id='productqty' name='productqty' placeholder='New Product quantity here..'>";
-            echo "<br>";
-            echo "<br>"; 
-            echo "<label for='productimage'>Select New Product image:</label>";
-            echo "<input type='file' id='productimage' name='productimage' accept='image/*'>";
-            echo "<input type='submit' name='submit' value='Update Selected Image'>";
-            echo "</form>";
-        } else {
-            echo "No images uploaded.";
-        }
+    echo "</tbody>";
+    echo "</table>";
 
-        $conn->close();
-        ?>
+    echo "<br>";
+    echo "<label for='productname'>Product name: </label>";
+    echo "<input type='text' id='productname' name='productname' placeholder='New Product Name here..'>";
+    echo "<br>";
+    echo "<br>";        
+    echo "<label for='productprice'>Product price: </label>";
+    echo "<input type='text' id='productprice' name='productprice' placeholder='New Product Price here..'>";
+    echo "<br>";
+    echo "<br>"; 
+    echo "<label for='productdesc'>Product Description: </label>";
+    echo "<input type='text' id='productdesc' name='productdesc' placeholder='New Product Description here..'>";
+    echo "<br>";
+    echo "<br>"; 
+    echo "<label for='productqty'>Product Quantity: </label>";
+    echo "<input type='text' id='productqty' name='productqty' placeholder='New Product quantity here..'>";
+    echo "<br>";
+    echo "<br>"; 
+    echo "<label for='productimage'>Select New Product image:</label>";
+    echo "<input type='file' id='productimage' name='productimage' accept='image/*'>";
+    echo "<input type='submit' name='submit' value='Update Selected Image'>";
+    echo "</form>";
+} else {
+    echo "No Product uploaded.";
+}
+
+$conn->close();
+?>
     <section>
 </body>
 </html>
