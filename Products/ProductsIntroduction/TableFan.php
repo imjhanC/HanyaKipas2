@@ -43,7 +43,7 @@
                 die();
             }else{
                 //Pull Session variable named cartItems and push it to cart
-                echo '<script> var itemsInCart = ' . json_encode($_SESSION["cartItems"]) . ' ; </script>';
+                echo '<script> var jsonString = ' . json_encode($_SESSION["cartItems"]) . ';  let listCarts = JSON.parse(jsonString); reloadCarts()</script>';
             }
         ?>
         <section class="product-header">
@@ -156,8 +156,8 @@
                     </div>
                     <div class="product-btn">
                         <script>
-                            let products = <?php echo json_encode($products); ?>
-                            //let checkboxID;
+                            let jsonString = <?php echo json_encode($products); ?>
+                            let products = JSON.parse(jsonString);
 
                             products.forEach(items => {
                                 checkboxID = document.getElementById(products.productname).checked ? products.productname : checkboxID; 
