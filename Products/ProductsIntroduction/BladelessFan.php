@@ -37,10 +37,14 @@
                 die("Connection failed: " . $conn->connect_error);
             }
             
+            //check if user is login or not
             if($_SESSION['login'] != 1){
                 echo '<script> alert("PLEASE LOGIN BEFORE PURCHASING!")';
                 header("refresh: 5; url = ../../HanyaKipas2/LoginRegister/LoginGUI.php");
                 die();
+            }else{
+                //Pull Session variable named CartItems and push it to cart
+                //$_SESSION[]
             }
         ?>
         <section class="product-header">
@@ -169,13 +173,16 @@
                 </div>
             </div>
         </section>
-
+        
+        <!-- Cart javascript -->
         <script src="scripts.js"></script>
-         <!-- JQuery -->
+         
+        <!-- Convert the listCart javascript array to php Session array -->
+        <?php
+            //$cartItems = array(json_decode());
+        ?>
+        <!-- JQuery -->
         <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-
-        <!-- Swiper -->
-        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
         <!-- Checkbox sselector -->
         <script type="text/javascript">
@@ -183,6 +190,9 @@
                 $('.model-checkbox').not(this).prop('checked', false);
             });
         </script>
+
+        <!-- Swiper -->
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
         <!-- Initialize Swiper -->
         <script>
