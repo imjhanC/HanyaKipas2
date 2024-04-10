@@ -26,6 +26,23 @@
 
     </head>
     <body>
+        <?php
+            $servername = "localhost:3308";
+            $username = "root";
+            $password = "";
+            $dbname = "hanyakipas";
+
+            $conn = new mysqli($servername, $username, $password, $dbname);
+            if ($conn->connect_error) {
+                die("Connection failed: " . $conn->connect_error);
+            }
+            
+            if($_SESSION['login'] != 1){
+                echo '<script> alert("PLEASE LOGIN BEFORE PURCHASING!")';
+                header("refresh: 5; url = ../../HanyaKipas2/LoginRegister/LoginGUI.php");
+                die();
+            }
+        ?>
         <section class="product-header">
             <div class="header-detail">
                 <header>
@@ -95,16 +112,7 @@
                     <!-- Product Details -->
                     <?php
                         // Establish connection to database
-                        /*$servername = "localhost:3308";
-                        $username = "root";
-                        $password = "";
-                        $dbname = "hanyakipas";
-
-                        $conn = new mysqli($servername, $username, $password, $dbname);
-                        if ($conn->connect_error) {
-                            die("Connection failed: " . $conn->connect_error);
-                        }
-                        
+                        /*
                         $productType = 'bladelessfan';
 
                         $query = "SELECT * FROM product WHERE producttype = ?";
@@ -152,7 +160,7 @@
                             let products = <?php echo json_encode($products); ?>
 
                             checkboxID = document.getElementById(item.productname).checked ? item.productname : checkboxID;
-                            document.write(<button onclick="addToCart()" class="add-to-cart">Add To Cart</button>);
+                            document.write('<button onclick="addToCart()" class="add-to-cart">Add To Cart</button>');
                         </script>
                     </div>
 
