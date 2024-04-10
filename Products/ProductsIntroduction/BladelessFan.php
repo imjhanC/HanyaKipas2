@@ -43,8 +43,8 @@
                 header("refresh: 5; url = ../../HanyaKipas2/LoginRegister/LoginGUI.php");
                 die();
             }else{
-                //Pull Session variable named CartItems and push it to cart
-                //$_SESSION[]
+                //Pull Session variable named cartItems and push it to cart
+                echo '<script> var itemsInCart = ' . json_encode($_SESSION["cartItems"]) . ' ; </script>';
             }
         ?>
         <section class="product-header">
@@ -162,9 +162,12 @@
                     <div class="product-btn">
                         <script>
                             let products = <?php echo json_encode($products); ?>
+                            //let checkboxID;
 
-                            checkboxID = document.getElementById(item.productname).checked ? item.productname : checkboxID;
-                            document.write('<button onclick="addToCart()" class="add-to-cart">Add To Cart</button>');
+                            products.forEach(items => {
+                                checkboxID = document.getElementById(products.productname).checked ? products.productname : checkboxID; 
+                            });
+                            document.write('<button onclick="addToCart(checkboxID)" class="add-to-cart">Add To Cart</button>');
                         </script>
                     </div>
 
@@ -179,7 +182,15 @@
          
         <!-- Convert the listCart javascript array to php Session array -->
         <?php
-            //$cartItems = array(json_decode());
+            // To get the JSON string from list cart
+            $jsonString = $_POST['listCartsJSON'];
+            
+            //Clear $_SESSION['cartItems'] to avoid redundency
+            if (isset($_SESSION['cartItems'])){
+                unset($_SESSION['cartItems']);
+            }
+            //Append the JSON string to $_SESSION['cartItems']
+            $_SESSION['cartItems'] = json_decode($jsonString, true);
         ?>
         <!-- JQuery -->
         <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>

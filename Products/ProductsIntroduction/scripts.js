@@ -54,7 +54,7 @@ function reloadCarts(){
     quantity.innerText = count;
 
     // Convert the listCart javascript array to php Session array
-    JSON.stringify(listCarts);
+    listCartsJSON = JSON.stringify(listCarts);
 }
 
 function changeQuantity(id, quantity){
