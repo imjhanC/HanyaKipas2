@@ -122,7 +122,7 @@
 
                         if($result-> num_rows > 0) {
                             $row = $result->fetch_assoc();
-                            echo '<span class="product-price">RM ' . $row['productdesc'] . '</span>'
+                            echo '<span class="product-price">RM ' . $row['productprice'] . '</span>'
                             echo '<p>' . $row['productdesc'] . '"</p>';
                         }
                         */
