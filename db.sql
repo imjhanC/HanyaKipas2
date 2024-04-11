@@ -27,8 +27,9 @@ CREATE TABLE enquiry (
     `contactnumber` VARCHAR(50) NOT NULL,
     `emailaddress` VARCHAR(50) NOT NULL,
     `enquiry` VARCHAR(50) NOT NULL,
-    `subject` VARCHAR(255) NOT NULL,
+    `subject` VARCHAR(255) NOT NULL
 );
+
 
 CREATE TABLE order (
     `customerName` VARCHAR(50) NOT NULL,
