@@ -4,11 +4,22 @@
 }
 
 body{
-    margin-top: 10vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 nav, .nav-links{
     display: flex;
+}
+#contact-us-form {
+    flex: 1;
+}
+
+.footer {
+    margin-top: auto;
 }
 
 nav{
@@ -57,8 +68,6 @@ nav{
 #contact-us-form {
     text-align: center;
 }
-
-
 
 /*footer*/
 footer{
@@ -180,8 +189,6 @@ footer,.copyright{
 }
 
 
-
-
 .burst {
 	stroke-width: 3;
 }
@@ -291,4 +298,82 @@ footer,.copyright{
 #results {
 	grid-area: results;
 	background: hsl(0, 0%, 95%);
+}
+
+/* Form labels */
+label {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.5em; /* Adjust the size as needed */
+    font-weight: 600; /* Adjust the weight as needed */
+    margin-bottom: 10px; /* Adjust spacing between labels */
+}
+
+/* Form input fields */
+input[type="text"],
+textarea,
+select {
+    font-family: 'Quicksand', sans-serif; /* Apply the same font as labels */
+    font-size: 1em; /* Adjust the size as needed */
+    padding: 10px;
+    margin-bottom: 20px; /* Adjust spacing between input fields */
+}
+
+/* Submit button */
+input[type="submit"] {
+    font-family: 'Quicksand', sans-serif; /* Apply the same font as labels */
+    font-size: 1em; /* Adjust the size as needed */
+    padding: 10px 20px;
+    background-color: #1a1a1a;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+/* Form labels */
+label {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.5em;
+    font-weight: 600;
+    margin-bottom: 5px; /* Adjust spacing between labels */
+}
+
+#help-label {
+    font-size: 5.5em; /* Adjust the font size as needed */
+	font-family: "Kanit", sans-serif;
+  	font-weight: 600;
+  	font-style: normal;
+	  background: linear-gradient(red, blue);
+	  -webkit-background-clip: text;
+			  background-clip: text;
+	  -webkit-text-fill-color: transparent;
+}
+
+/* Form input fields */
+input[type="text"],
+textarea,
+select {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1em;
+    padding: 10px;
+    margin-bottom: 10px; /* Adjust spacing between input fields */
+	width: 500px; /* Adjust the width as needed */
+    margin: 0 auto; /* Center the input box horizontally */
+
+}
+
+/* Submit button */
+input[type="submit"] {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1em;
+    padding: 10px 20px;
+    background-color: #1a1a1a;
+    color: white;
+    border: none;
+    cursor: pointer;
 }
