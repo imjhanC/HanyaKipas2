@@ -275,4 +275,96 @@ footer,.copyright{
 	grid-area: results;
 	background: hsl(0, 0%, 95%);
 }
+#product-display,.msg1{
+	text-align: center;
+	font-family: "DM Sans", sans-serif;
+  	font-optical-sizing: auto;
+  	font-weight: 700;
+  	font-style: normal;
+	font-size: 2.1em;
+}
+.btn-container {
+    display: flex;
+	justify-content: center;
+    gap: 25px; /* Adjust the gap between buttons */
+    margin-top: 55px; /* Add margin for spacing */
+}
 
+.btn {
+	border: none;
+	width: 13em;
+	height: 3em;
+	border-radius: 3em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 12px;
+	background: #1C1A1C;
+	cursor: pointer;
+	transition: all 450ms ease-in-out;
+  }
+  
+  .sparkle {
+	fill: #AAAAAA;
+	transition: all 800ms ease;
+  }
+  
+  .text {
+	font-weight: 600;
+	color: #AAAAAA;
+	font-size: 1.3em;
+  }
+  
+  .btn:hover {
+	background: linear-gradient(0deg,#7cb4f3,#0018ee);
+	box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.4),
+	inset 0px -4px 0px 0px rgba(0, 0, 0, 0.2),
+	0px 0px 0px 4px rgba(255, 255, 255, 0.2),
+	0px 0px 180px 0px #9f00fc;
+	transform: translateY(-2px);
+  }
+  
+  .btn:hover .text {
+	color: white;
+  }
+  
+  .btn:hover .sparkle {
+	fill: white;
+	transform: scale(1.2);
+  } 
+
+
+/* productstyles.css */
+#product-listing {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start; /* Align items at the start of the flex container */
+    gap: 40px; /* Adjust the gap between product cards */
+	margin-left: 100px;
+}
+
+.product-card {
+    width: calc(25% - 100px); /* Adjust the width of each product card based on the number of products per row */
+    max-width: 500px; /* Set a maximum width for each product card */
+    height: 500px; /* Allow the height to adjust based on content */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product-card .product-image {
+    max-width: 100%; /* Ensure the image doesn't exceed the container */
+    height: auto; /* Allow the height to adjust based on content */
+    margin-bottom: 10px;
+}
+
+.product-card h1 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+    text-align: center;
+}

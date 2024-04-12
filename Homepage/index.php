@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -73,15 +77,17 @@
                         
                     </div>
                     <a href="#xxx"><img src="shopping-cart.png" alt="shopping cart" height =50 width =50></a></img>
-                    <div class="dropdown">
-                        <a href="../../HanyaKipas/LoginRegister/LoginGUI.php">
-                            <img src="login.png" alt="shopping cart" height="50" width="50" id="loginlogo" onclick="toggleDropdown()">
-                        </a>
-                        <div class="dropdown-content" id="dropdownContent">
-                            <a href="#">Account Info</a>
-                            <a href="#">Logout</a>
-                        </div>
-                    </div>
+                    <?php 
+                    if (isset($_SESSION['username']) && !empty($_SESSION['username'])) {
+                        echo "<a>";
+                        echo "<img src='login.png' alt='login' height='50' width='50' id='loginlogo'>";
+                        echo "</a>";
+                    } else {
+                        echo "<a href='../../HanyaKipas/LoginRegister/LoginGUI.php'>";
+                        echo "<img src='login.png' alt='login' height='50' width='50' id='loginlogo'>";
+                        echo "</a>";
+                    } 
+                    ?>
                 </ul>
             </div>
         </nav>

@@ -118,7 +118,7 @@
                     var response = xhr.responseText;
                     if (response === "Valid") {
                         // Redirect user to hi.php
-                        window.location.href = "../Homepage/index.php";
+                        window.location.href = "../Homepage/index.php"; // tested $_SESSIOn it works 
                     } else if (response === "InvalidPassword") {
                         document.getElementById("status-message-login").textContent = "Password is not valid.";
                     } else if (response === "NoUser") {

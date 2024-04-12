@@ -15,6 +15,9 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
 	</head>
 	<body>
 		<!-- navigation bar -->
@@ -67,7 +70,7 @@
                         <input type=search name=q aria-label="Search for inspiration"/>
                     </div>
                     
-                    <div id="results">
+                   <div id="results">
                         
                     </div>
                     <a href="#xxx"><img src="shopping-cart.png" alt="shopping cart" height =50 width =50></a></img>
@@ -76,7 +79,87 @@
             </div>
         </nav>
 		<br>
-        <img src="product.jpg" alt="main-img" id='ads'></img>
-        
+        <section id='product-display'>
+            <h1 id='msg1'> Let's make the process much more quicker !</h1>
+            <div class="btn-container">
+                <button class="btn">
+                    <svg height="24" width="24" fill="#FFFFFF" viewBox="0 0 24 24" data-name="Layer 1" id="Layer_1" class="sparkle">
+                        <path d="M10,21.236,6.755,14.745.264,11.5,6.755,8.255,10,1.764l3.245,6.491L19.736,11.5l-6.491,3.245ZM18,21l1.5,3L21,21l3-1.5L21,18l-1.5-3L18,18l-3,1.5ZM19.333,4.667,20.5,7l1.167-2.333L24,3.5,21.667,2.333,20.5,0,19.333,2.333,17,3.5Z"></path>
+                    </svg>
+                    <span class="text">All products</span>
+                </button>
+                <button class="btn">
+                    <svg height="24" width="24" fill="#FFFFFF" viewBox="0 0 24 24" data-name="Layer 1" id="Layer_1" class="sparkle">
+                        <path d="M10,21.236,6.755,14.745.264,11.5,6.755,8.255,10,1.764l3.245,6.491L19.736,11.5l-6.491,3.245ZM18,21l1.5,3L21,21l3-1.5L21,18l-1.5-3L18,18l-3,1.5ZM19.333,4.667,20.5,7l1.167-2.333L24,3.5,21.667,2.333,20.5,0,19.333,2.333,17,3.5Z"></path>
+                    </svg>
+                    <span class="text">Celling fan</span>
+                </button>
+                <button class="btn">
+                    <svg height="24" width="24" fill="#FFFFFF" viewBox="0 0 24 24" data-name="Layer 1" id="Layer_1" class="sparkle">
+                        <path d="M10,21.236,6.755,14.745.264,11.5,6.755,8.255,10,1.764l3.245,6.491L19.736,11.5l-6.491,3.245ZM18,21l1.5,3L21,21l3-1.5L21,18l-1.5-3L18,18l-3,1.5ZM19.333,4.667,20.5,7l1.167-2.333L24,3.5,21.667,2.333,20.5,0,19.333,2.333,17,3.5Z"></path>
+                    </svg>
+                    <span class="text">Table fan</span>
+                </button>
+                <button class="btn">
+                    <svg height="24" width="24" fill="#FFFFFF" viewBox="0 0 24 24" data-name="Layer 1" id="Layer_1" class="sparkle">
+                        <path d="M10,21.236,6.755,14.745.264,11.5,6.755,8.255,10,1.764l3.245,6.491L19.736,11.5l-6.491,3.245ZM18,21l1.5,3L21,21l3-1.5L21,18l-1.5-3L18,18l-3,1.5ZM19.333,4.667,20.5,7l1.167-2.333L24,3.5,21.667,2.333,20.5,0,19.333,2.333,17,3.5Z"></path>
+                    </svg>
+                    <span class="text">Bladeless fan</span>
+                </button>
+            </div>
+            <br>
+            <br>
+            <br>
+            <?php
+            $servername = "localhost:3308";
+            $username = "root";
+            $password = ""; // Empty password
+            $dbname = "hanyakipas";
+
+            // Create connection
+            $conn = new mysqli($servername, $username, $password, $dbname);
+
+            // Check connection
+            if ($conn->connect_error) {
+                die("Connection failed: " . $conn->connect_error);
+            }
+
+            // Fetch products from database
+            $sql = "SELECT id ,productname, productprice, productdesc, producttype, productqty, productimage FROM product";
+            $result = $conn->query($sql);
+
+            // Display products
+            if ($result->num_rows > 0) {
+                echo "<div id='product-listing'>";
+                $counter = 0; // Counter to track the number of products
+                while($row = $result->fetch_assoc()) {
+                    echo "<div class='product-card'>";
+                    echo "<img src='data:image/jpeg;base64," . base64_encode($row['productimage']) . "' alt='Product Image' class='product-image'>";
+                    echo "<h1>" . $row['productname'] . "</h1>";
+                    echo "</div>";
+                    $counter++;
+                    // Break the loop after displaying the first four products horizontally
+                    if ($counter >= 4) {
+                        break;
+                    }
+                }
+
+                // Display the rest of the products underneath
+                while($row = $result->fetch_assoc()) {
+                    echo "<div class='product-card'>";
+                    echo "<img src='data:image/jpeg;base64," . base64_encode($row['productimage']) . "' alt='Product Image' class='product-image'>";
+                    echo "<h1>" . $row['productname'] . "</h1>";
+                    echo "</div>";
+                }
+
+                echo "</div>"; // Close #product-listing
+            } else {
+                echo "No products found";
+            }
+
+            // Close connection
+            $conn->close();
+            ?>
+        </section>
 	</body>
 </html>

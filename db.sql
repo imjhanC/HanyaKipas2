@@ -6,7 +6,7 @@ CREATE TABLE user (
     `username` VARCHAR(50) NOT NULL,
     `emailaddress` VARCHAR(50) NOT NULL,
     `password` VARCHAR(50) NOT NULL,
-    PRIMARY KEY (`username`).
+    PRIMARY KEY (`username`),
     UNIQUE KEY `emailaddress` (`emailaddress`)
 );
 
