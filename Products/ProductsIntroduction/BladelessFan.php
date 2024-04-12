@@ -124,6 +124,7 @@
                         $stmt->bind_param("s", $productType);
                         $stmt->execute();
                         $result = $stmt->get_result();
+                        $stmt->close();
 
                         if($result-> num_rows > 0) {
                             $row = $result->fetch_assoc();
@@ -145,7 +146,7 @@
                                     while($row = $result->fetch_assoc()){
                                         echo '<input type="checkbox" class="model-checkbox" id="' . $row['productname'] . '">';
                                         echo '<label for="' . $row['productname'] . '" class="model-label">' . $row['productname'] . '</label>';
-                                        $products = array(array("productname" => $row['productname'], "productprice" => $row['productprice'], "quantity" => $row['productqty'] ));
+                                        $products = array(array("productname" => $row['productname'], "productprice" => $row['productprice'], "productqty" => $row['productqty'], "quantity" => 0 ));
                                     }
                                 }
 

@@ -39,9 +39,9 @@
                 echo '<script> var jsonString = ' . json_encode($_SESSION["cartItems"]) . ';  let listCarts = JSON.parse(jsonString); reloadCarts()</script>';
             }*/
         ?>
-        <section class="product-page">
-            <div class="product-details">
-                <div class="product-text">
+        <section class="checkout-page">
+            <div class="checkout-details">
+                <div class="checkout-text">
                     <div class="cart">
                         <h1>Cart</h1>
                         <ul class="list-cart"></ul>
@@ -78,10 +78,19 @@
                             //Update Order Database
                             if($_SERVER["REQUEST_METHOD"] == "POST"){
                                 foreach($_SESSION['cartItems'] as $item) {
-                                    $query = "INSERT INTO order VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-                                    $stmt = $conn->prepare($query);
-                                    $stmt->bind_param("ssssssssss", $_REQUEST['customerName'], $_REQUEST['customerDesc'], $_REQUEST['customerShipAddress'], $_REQUEST['customerContactNum'], "test.jpg", $item['productname'], $item['$productdesc'], $item['produducttype'], $item['quantity']);
-                                    $stmt->execute();
+                                    //Insert items into Order database
+                                    $queryOrder = "INSERT INTO order VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                                    $stmtOrder = $conn->prepare($queryOrder);
+                                    $stmtOrder->bind_param("ssssssssss", $_REQUEST['customerName'], $_REQUEST['customerDesc'], $_REQUEST['customerShipAddress'], $_REQUEST['customerContactNum'], "test.jpg", $item['checkoutname'], $item['$checkoutdesc'], $item['produducttype'], intval($item['quantity']));
+                                    $stmtOrder->execute();
+                                    $stmtOrder->close();
+
+                                    //Update Product to reflect Order database
+                                    $queryProduct = "UPDATE product SET productqty = ? WHERE productname = ?";
+                                    $stmtProduct = $conn->prepare($queryProduct);
+                                    $stmtProduct->bind_param("is", intval($item['productqty'] - $item['quantity']), $item['productname']);
+                                    $stmtProduct->execute();
+                                    $stmtProduct->close();
                                 }
                             }
                         ?>

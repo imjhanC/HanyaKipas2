@@ -28,7 +28,7 @@ label{
 	font-size: 12px;
 }
 
-.product-details{
+.checkout-details{
     max-width: 3200px;
     width: 95%;
     display: grid;
@@ -36,7 +36,7 @@ label{
     margin: 50px auto;
 }
 
-.product-text{
+.checkout-text{
     background-color: #f3ecec;
     padding: 60px;
     position: relative;
