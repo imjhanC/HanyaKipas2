@@ -271,53 +271,8 @@ footer,.copyright{
 	stroke-width: 3;
 }
 
-
-
 #results {
 	grid-area: results;
 	background: hsl(0, 0%, 95%);
 }
-.product-card {
-	border: 5px solid #ccc;
-	border-radius: 5px;
-	padding: 0px;
-	margin-bottom: 20px;
-	margin-right: 20px;
-	display: inline-block;
-	background-color: grey;
-}
 
-.product-card img {
-	width: 500px;
-	height: auto;
-	display: block;
-	margin: 0 auto 10px;
-}
-
-.product-card h1 {
-	text-align: center;
-	font-family: "Quicksand", sans-serif;
-	font-optical-sizing: auto;
-	font-weight: 500;
-	font-style: normal;
-	font-size: 1.6em;
-	margin-bottom: 0;
-}
-
-.product-card a {
-	color: white;
-	text-decoration: none;
-	display: inline-block;
-	padding: 10px 20px;
-	background-color: #4F95DA;
-	border-radius: 25px;
-	transition: background-color 0.3s ease;
-	font-family: "Mulish", sans-serif;
-	font-optical-sizing: auto;
-	font-weight: 600;
-	font-style: normal;
-}
-
-.product-card a:hover {
-	background-color: #1a1a1a;
-}

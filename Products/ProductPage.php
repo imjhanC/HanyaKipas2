@@ -76,58 +76,7 @@
             </div>
         </nav>
 		<br>
-        <section id="product-class">
-        <!-- Your product images and names here -->
-        <?php
-            $servername = "localhost:3308";
-            $username = "root";
-            $password = ""; // Empty password
-            $dbname = "hanyakipas";
-
-            // Create connection
-            $conn = new mysqli($servername, $username, $password, $dbname);
-
-            // Check connection
-            if ($conn->connect_error) {
-                die("Connection failed: " . $conn->connect_error);
-            }
-
-            // Fetch products from database
-            $sql = "SELECT id ,productname, productprice, productdesc, producttype, productqty, productimage FROM product";
-            $result = $conn->query($sql);
-
-            // Display products
-            if ($result->num_rows > 0) {
-                echo "<div id='product-listing'>";
-                $counter = 0; // Counter to track the number of products
-                while($row = $result->fetch_assoc()) {
-                    echo "<div class='product-card'>";
-                    echo "<img src='data:image/jpeg;base64," . base64_encode($row['productimage']) . "' alt='Product Image' class='product-image'>";
-                    echo "<h1>" . $row['productname'] . "</h1>";
-                    echo "</div>";
-                    $counter++;
-                    // Break the loop after displaying the first four products horizontally
-                    if ($counter >= 4) {
-                        break;
-                    }
-                }
-
-                // Display the rest of the products underneath
-                while($row = $result->fetch_assoc()) {
-                    echo "<div class='product-card'>";
-                    echo "<img src='data:image/jpeg;base64," . base64_encode($row['productimage']) . "' alt='Product Image' class='product-image'>";
-                    echo "<h1>" . $row['productname'] . "</h1>";
-                    echo "</div>";
-                }
-
-                echo "</div>"; // Close #product-listing
-            } else {
-                echo "No products found";
-            }
-
-            // Close connection
-            $conn->close();
-        ?>
-    </section>
+        <img src="product.jpg" alt="main-img" id='ads'></img>
+        
 	</body>
 </html>

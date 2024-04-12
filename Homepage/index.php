@@ -73,7 +73,15 @@
                         
                     </div>
                     <a href="#xxx"><img src="shopping-cart.png" alt="shopping cart" height =50 width =50></a></img>
-                    <a href="../../HanyaKipas/LoginRegister/LoginGUI.php"><img src="login.png" alt="shopping cart" height =50 width =50 id="loginlogo"></a></img>
+                    <div class="dropdown">
+                        <a href="../../HanyaKipas/LoginRegister/LoginGUI.php">
+                            <img src="login.png" alt="shopping cart" height="50" width="50" id="loginlogo" onclick="toggleDropdown()">
+                        </a>
+                        <div class="dropdown-content" id="dropdownContent">
+                            <a href="#">Account Info</a>
+                            <a href="#">Logout</a>
+                        </div>
+                    </div>
                 </ul>
             </div>
         </nav>
