@@ -67,7 +67,10 @@
                 <h1>Cart</h1>
                 <ul class="list-cart"></ul>
                 <div class="check-out">
-                    <div class="total">0</div>
+                    <div class="check-out-btn">
+                        Check-Out<br>Total:
+                        <div class="total">0</div>
+                    </div>
                     <div class="close-shopping-cart">Close</div>
                 </div>
             </div>

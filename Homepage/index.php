@@ -77,6 +77,7 @@
                         
                     </div>
                     <a href="#xxx"><img src="shopping-cart.png" alt="shopping cart" height =50 width =50></a></img>
+<<<<<<< HEAD
                     <?php 
                     if (isset($_SESSION['username']) && !empty($_SESSION['username'])) {
                         echo "<a>";
@@ -88,6 +89,17 @@
                         echo "</a>";
                     } 
                     ?>
+=======
+                    <div class="dropdown">
+                        <a href="../../HanyaKipas/LoginRegister/LoginGUI.php">
+                            <img src="login.png" alt="shopping cart" height="50" width="50" id="loginlogo" onclick="toggleDropdown()">
+                        </a>
+                        <div class="dropdown-content" id="dropdownContent">
+                            <a href="#">Account Info</a>
+                            <a href="../../HanyaKipas2/LoginRegister/logout.php">Logout</a>
+                        </div>
+                    </div>
+>>>>>>> bbfd4fd9c654be11ef9aec3695bbf5f35016b965
                 </ul>
             </div>
         </nav>
