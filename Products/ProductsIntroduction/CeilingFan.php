@@ -1,13 +1,15 @@
-<!-- Bladeless Fan -->
+<!-- Ceiling Fan -->
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
         <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-        <title>Bladeless Fan</title>
+        <title>Ceiling Fan</title>
 
         <!-- StyleSheets -->
+        <link rel="stylesheet" href="../styles.css">
+        <link rel="stylesheet" href="style1.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,7 +23,6 @@
             object-position: cover;
         }
         </style>
-        <link rel="stylesheet" href="style1.css">
         
     </head>
     <body>
@@ -65,7 +66,10 @@
                 <h1>Cart</h1>
                 <ul class="list-cart"></ul>
                 <div class="check-out">
-                    <div class="total">0</div>
+                    <div class="check-out-btn">
+                        Check-Out<br>Total:
+                        <div class="total">0</div>
+                    </div>
                     <div class="close-shopping-cart">Close</div>
                 </div>
             </div>

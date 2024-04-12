@@ -3,6 +3,7 @@ let closeCart = document.querySelector('.close-shopping-cart');
 let list = document.querySelector('.list');
 let listCart = document.querySelector('.list-cart');
 let body = document.querySelector('body');
+let checkOutBtn = document.querySelector('.check-out-btn');
 let total = document.querySelector('.total');
 let quantity = document.querySelector('.shopping-cart-quantity');
 
@@ -12,6 +13,10 @@ openCart.addEventListener('click', ()=>{
 
 closeCart.addEventListener('click', ()=>{
     body.classList.remove('active');
+})
+
+checkOutBtn.addEventListener('click', ()=>{
+    location.replace('../../HanyaKipas2/Checkout/index.php');
 })
 
 let listCarts = [];

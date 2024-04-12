@@ -79,7 +79,7 @@
                         </a>
                         <div class="dropdown-content" id="dropdownContent">
                             <a href="#">Account Info</a>
-                            <a href="#">Logout</a>
+                            <a href="../../HanyaKipas2/LoginRegister/logout.php">Logout</a>
                         </div>
                     </div>
                 </ul>
