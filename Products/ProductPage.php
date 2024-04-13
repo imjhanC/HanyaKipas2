@@ -148,11 +148,11 @@
                     echo "<div class='product-card'>";
                     echo "<img src='data:image/jpeg;base64," . base64_encode($row['productimage']) . "' alt='Product Image' class='product-image'>";
                     echo "<h1>" . $row['productname'] . "</h1>";
-                    echo "<p> RM : ". $row['productprice'] . "</p>";
+                    echo "<p>". $row['productprice'] . "</p>";
                     echo "<p> Description : ". $row['productdesc'] . "</p>";
-                    echo "<p> Product type : ". $row['producttype'] . "</p>";
+                    echo "<p>". $row['producttype'] . "</p>";
                     echo "<p> Quantity : ". $row['productqty'] . "</p>";
-                    echo "<button class='add-to-cart-btn' data-product-id='" . $row['id'] . "'>Add to Cart</button>";
+                    echo "<button type='submit' class='add-to-cart-btn'>Add to Cart</button>";
                     echo "</div>";
                     $counter++;
                     // Break the loop after displaying the first four products horizontally
@@ -166,11 +166,11 @@
                     echo "<div class='product-card'>";
                     echo "<img src='data:image/jpeg;base64," . base64_encode($row['productimage']) . "' alt='Product Image' class='product-image'>";
                     echo "<h1>" . $row['productname'] . "</h1>";
-                    echo "<p> RM : ". $row['productprice'] . "</p>";
+                    echo "<p>". $row['productprice'] . "</p>";
                     echo "<p> Description : ". $row['productdesc'] . "</p>";
-                    echo "<p> Product type : ". $row['producttype'] . "</p>";
+                    echo "<p>". $row['producttype'] . "</p>";
                     echo "<p> Quantity : ". $row['productqty'] . "</p>";
-                    echo "<button class='add-to-cart-btn' data-product-id='" . $row['id'] . "'>Add to Cart</button>";
+                    echo "<button type='submit' class='add-to-cart-btn'>Add to Cart</button>";
                     echo "</div>";
                 }
 
@@ -183,5 +183,60 @@
             $conn->close();
             ?>
         </section>
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
+            
+            addToCartButtons.forEach(button => {
+                button.addEventListener('click', addToCart);
+            });
+
+            function addToCart(event) {
+                const productCard = event.target.closest('.product-card');
+                const productNameElement = productCard.querySelector('h1');
+                const productImageElement = productCard.querySelector('.product-image');
+                const productPriceElement = productCard.querySelector('p:nth-of-type(1)');
+                const productQtyElement = productCard.querySelector('p:nth-of-type(2)');
+                const productTypeElement = productCard.querySelector('p:nth-of-type(3)');
+                
+                // Check if all required elements are present
+                if (!productNameElement || !productImageElement || !productPriceElement || !productQtyElement || !productTypeElement) {
+                    console.error('One or more product details not found');
+                    return;
+                }
+
+                // Extract product details
+                const productName = productNameElement.innerText;
+                const productImage = productImageElement.src;
+                const productPrice = productPriceElement.innerText.trim();
+                const productQty = productQtyElement.innerText.trim();
+                const productType = productTypeElement.innerText.trim();
+                
+                const xhr = new XMLHttpRequest();
+                xhr.open('POST', 'addToCart.php', true);
+                xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                xhr.onload = function() {
+                    if (xhr.status === 200) {
+                        // Handle successful response
+                        alert(xhr.responseText);
+                        window.location.reload(); // Reload the page to maintain the scroll position
+                    } else {
+                        // Handle error
+                        alert('Error adding to cart');
+                    }
+                };
+                xhr.onerror = function() {
+                    // Handle network error
+                    alert('Network error occurred');
+                };
+                
+                const data = `productName=${productName}&productImage=${productImage}&productPrice=${productPrice}&productQty=${productQty}&productType=${productType}`;
+                xhr.send(data);
+                
+                event.preventDefault();
+            }
+        });
+    </script>
+
 	</body>
 </html>

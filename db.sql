@@ -10,9 +10,6 @@ CREATE TABLE user (
     UNIQUE KEY `emailaddress` (`emailaddress`)
 );
 
-INSERT INTO `user` (`username`, `emailaddress`, `password`) VALUES ('HanyaCheng', 'chengjiahan@hanyakipas.com', 'JiaHan1222222'); 
-INSERT INTO `user` (`username`, `emailaddress`, `password`) VALUES ('HanyaKwen', 'KyeWen@hanyakipas.com', 'KyeWen1222222');
-INSERT INTO `user` (`username`, `emailaddress`, `password`) VALUES ('HanyaJun', 'ZhanJun@hanyakipas.com', 'ZhanJun1222222');
 
 CREATE TABLE product (
     `productname` VARCHAR(50) NOT NULL,
@@ -44,6 +41,14 @@ CREATE TABLE order (
     `productprice` INT(11) NOT NULL,
     `productname` VARCHAR(50) NOT NULL,
     `productdesc` VARCHAR(255) NOT NULL,
-    `producttype` VARCHAR(50) NOT NULL
+    `producttype` VARCHAR(50) NOT NULL,
     `productqty` INT(11) NOT NULL
+);
+
+CREATE TABLE cart (
+    `productname` VARCHAR(50) NOT NULL,
+    `productimage` MEDIUMBLOB,
+    `productprice` INT(11) NOT NULL,
+    `productqty` INT(11) NOT NULL,
+    `producttype` VARCHAR(50) NOT NULL
 );
