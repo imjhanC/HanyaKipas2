@@ -33,6 +33,13 @@ if ($result->num_rows > 0) {
         $productType = $row['producttype'];
         $productQty = $row['productqty'];
         
+        // Check if product name is empty
+        if (empty($productName)) {
+            // Redirect user back to ProductPage.php
+            header("Location: ProductPage.php");
+            exit; // Stop further execution
+        }
+        
         // Insert product details into the orders table
         $insertSql = "INSERT INTO orders (customerName, customerDesc, customerShipAddress, customerContactNum, productPrice, productName, productType, productQty) 
                       VALUES ('$customerName', '$customerDesc', '$customerShipAddress', '$customerContactNum', '$productPrice', '$productName', '$productType', '$productQty')";
@@ -41,11 +48,19 @@ if ($result->num_rows > 0) {
             echo "Error inserting product: " . $conn->error;
         }
     }
+
+    // Empty the cart table
+    $emptyCartSql = "DELETE FROM cart";
+    if ($conn->query($emptyCartSql) !== TRUE) {
+        echo "Error emptying cart: " . $conn->error;
+    }
 } else {
     echo "No products found in the shopping cart.";
 }
 
 // Close connection
 $conn->close();
+
+// Redirect to checkout page
 header("Location: checkout.php");
 ?>

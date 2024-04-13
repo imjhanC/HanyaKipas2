@@ -431,3 +431,17 @@ footer,.copyright{
 	fill: #06f;
 }
   
+.cart-icon-container {
+    position: relative; /* Position the container relative to its normal position */
+}
+
+.cart-counter {
+    position: absolute; /* Position the counter absolutely */
+    top: 10px; /* Adjust the top position to align it properly */
+    left: 1660px; /* Adjust the right position to align it properly */
+    background-color: red; /* Example background color for the counter */
+    color: white; /* Example text color for the counter */
+    border-radius: 50%; /* Make it circular */
+    padding: 5px 8px; /* Adjust padding as needed */
+    font-size: 12px; /* Adjust font size as needed */
+}

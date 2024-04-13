@@ -77,29 +77,50 @@
                 ?>
             </tbody>
         </table>
-        <button id="delete-button">Delete Selected</button>
-        <a id="confirm-button" href="../../HanyaKipas/Products/checkout.php">Confirm Purchase</a>
+        <button id="delete-button">Delete</button>
+        <button id="confirm-button">Confirm Purchase</button>
     </section>
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            document.getElementById('delete-button').addEventListener('click', function () {
-                var checkboxes = document.querySelectorAll('.delete-checkbox:checked');
-                checkboxes.forEach(function (checkbox) {
-                    var productName = checkbox.dataset.productname;
-                    // Perform AJAX request to delete the product from the cart
-                    var xhr = new XMLHttpRequest();
-                    xhr.open("POST", "delete_product.php", true);
-                    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-                    xhr.onreadystatechange = function () {
-                        if (xhr.readyState === 4 && xhr.status === 200) {
-                            // Remove the row from the table on successful deletion
-                            checkbox.closest('tr').remove();
+    document.addEventListener('DOMContentLoaded', function () {
+        document.getElementById('delete-button').addEventListener('click', function () {
+            var checkboxes = document.querySelectorAll('.delete-checkbox:checked');
+            checkboxes.forEach(function (checkbox) {
+                var productName = checkbox.dataset.productname;
+                // Perform AJAX request to delete the product from the cart
+                var xhr = new XMLHttpRequest();
+                xhr.open("POST", "delete_product.php", true);
+                xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState === 4 && xhr.status === 200) {
+                        // Remove the row from the table on successful deletion
+                        checkbox.closest('tr').remove();
+                        // Check if there are no more orders after deletion
+                        if (document.querySelectorAll('#shopping-cart tbody tr').length === 0) {
+                            // Disable the Confirm Purchase button and change its text
+                            document.getElementById('confirm-button').disabled = true;
+                            document.getElementById('confirm-button').textContent = 'No Orders to Confirm';
                         }
-                    };
-                    xhr.send("product_name=" + encodeURIComponent(productName)); // Encode to handle special characters
-                });
+                    }
+                };
+                xhr.send("product_name=" + encodeURIComponent(productName)); // Encode to handle special characters
             });
         });
-    </script>
+
+        // Redirect to checkout page after deleting selected products
+        document.getElementById('confirm-button').addEventListener('click', function () {
+            // Check if there are no orders added
+            var noOrders = (document.querySelectorAll('#shopping-cart tbody tr').length === 0);
+            if (noOrders) {
+                // Redirect to the product page since there are no orders to confirm
+                window.location.href = "ProductPage.php";
+            } else {
+                // Redirect to the checkout page
+                window.location.href = "checkout.php";
+            }
+        });
+    });
+</script>
+
+
 </body>
 </html>

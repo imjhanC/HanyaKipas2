@@ -85,7 +85,7 @@
                    <div id="results">
                         
                     </div>
-                    <a href="#xxx"><img src="shopping-cart.png" alt="shopping cart" height =50 width =50></a></img>
+                    <a href="../../HanyaKipas/Products/ShoppingCart.php"><img src="shopping-cart.png" alt="shopping cart" height =50 width =50></a><span id="cartItemCount" class="cart-counter"></span></img>
                     <a href="../../HanyaKipas/LoginRegister/LoginGUI.php"><img src="login.png" alt="shopping cart" height =50 width =50 id="loginlogo"></a></img>
                 </ul>
             </div>
@@ -94,12 +94,6 @@
         <section id='product-display'>
             <h1 id='msg1'> Let's make the process much more quicker !</h1>
             <div class="btn-container">
-            <button class="btn" data-type="">
-                    <svg height="24" width="24" fill="#FFFFFF" viewBox="0 0 24 24" data-name="Layer 1" id="Layer_1" class="sparkle">
-                        <path d="M10,21.236,6.755,14.745.264,11.5,6.755,8.255,10,1.764l3.245,6.491L19.736,11.5l-6.491,3.245ZM18,21l1.5,3L21,21l3-1.5L21,18l-1.5-3L18,18l-3,1.5ZM19.333,4.667,20.5,7l1.167-2.333L24,3.5,21.667,2.333,20.5,0,19.333,2.333,17,3.5Z"></path>
-                    </svg>
-                    <span class="text">All products</span>
-                </button>
                 <button class="btn" data-type="celling fan">
                     <svg height="24" width="24" fill="#FFFFFF" viewBox="0 0 24 24" data-name="Layer 1" id="Layer_1" class="sparkle">
                         <path d="M10,21.236,6.755,14.745.264,11.5,6.755,8.255,10,1.764l3.245,6.491L19.736,11.5l-6.491,3.245ZM18,21l1.5,3L21,21l3-1.5L21,18l-1.5-3L18,18l-3,1.5ZM19.333,4.667,20.5,7l1.167-2.333L24,3.5,21.667,2.333,20.5,0,19.333,2.333,17,3.5Z"></path>
@@ -184,7 +178,7 @@
             ?>
         </section>
         <script>
-        document.addEventListener('DOMContentLoaded', function() {
+            document.addEventListener('DOMContentLoaded', function() {
             const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
             
             addToCartButtons.forEach(button => {
@@ -235,6 +229,70 @@
                 
                 event.preventDefault();
             }
+        });
+        document.addEventListener('DOMContentLoaded', function() {
+        const cartItemCountSpan = document.getElementById('cartItemCount');
+    
+        // Function to fetch cart item count
+        function getCartItemCount() {
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', 'getCartItemCount.php', true);
+            xhr.onload = function() {
+            if (xhr.status === 200) {
+                // Update the content of the span element
+                cartItemCountSpan.textContent = xhr.responseText;
+            } else {
+                console.error('Error fetching cart item count');
+            }
+            };
+            xhr.onerror = function() {
+                console.error('Network error occurred');
+            };
+            xhr.send();
+        }
+
+        // Fetch cart item count initially when the page loads
+            getCartItemCount();
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.querySelector('input[name="q"]');
+            const productCards = document.querySelectorAll('.product-card');
+
+            searchInput.addEventListener('input', function() {
+                const searchText = this.value.toLowerCase().trim();
+
+                productCards.forEach(card => {
+                    const productName = card.querySelector('h1').innerText.toLowerCase();
+                    const productType = card.querySelector('p:nth-of-type(3)').innerText.toLowerCase();
+
+                    if (productName.includes(searchText) || productType.includes(searchText)) {
+                        card.style.display = 'block'; // Show the product card
+                    } else {
+                        card.style.display = 'none'; // Hide the product card
+                    }
+                });
+            });
+        });
+        document.addEventListener('DOMContentLoaded', function() {
+            const productCards = document.querySelectorAll('.product-card');
+            const filterButtons = document.querySelectorAll('.btn');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const filterType = this.getAttribute('data-type').toLowerCase().trim();
+
+                    productCards.forEach(card => {
+                        const productType = card.querySelector('p:nth-of-type(3)').innerText.toLowerCase().trim();
+
+                        if (productType.includes(filterType) || filterType === '') {
+                            card.style.display = 'block'; // Show the product card
+                        } else {
+                            card.style.display = 'none'; // Hide the product card
+                        }
+                    });
+                });
+            });
         });
     </script>
 
