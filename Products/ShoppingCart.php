@@ -86,9 +86,16 @@
                 checkboxes.forEach(function (checkbox) {
                     var productName = checkbox.dataset.productname;
                     // Perform AJAX request to delete the product from the cart
-                    // You can send productName to your server-side script to handle deletion
-                    // For demonstration, let's just remove the row from the table
-                    checkbox.closest('tr').remove();
+                    var xhr = new XMLHttpRequest();
+                    xhr.open("POST", "delete_product.php", true);
+                    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                    xhr.onreadystatechange = function () {
+                        if (xhr.readyState === 4 && xhr.status === 200) {
+                            // Remove the row from the table on successful deletion
+                            checkbox.closest('tr').remove();
+                        }
+                    };
+                    xhr.send("product_name=" + encodeURIComponent(productName)); // Encode to handle special characters
                 });
             });
         });
