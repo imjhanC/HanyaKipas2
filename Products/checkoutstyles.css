@@ -103,3 +103,9 @@ td {
 tbody tr:nth-child(even) {
     background-color: #f2f2f2;
 }
+
+#checkout-div{
+    margin-top: 40px;
+    margin-left: 100px;
+    margin-right: 100px;
+}

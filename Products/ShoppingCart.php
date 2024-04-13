@@ -15,7 +15,6 @@
         </div>
         <div>
             <ul class="nav-links">
-                <a href="#xxx"><img src="shopping-cart.png" alt="shopping cart" height="50" width="50"></a>
                 <a href="../../HanyaKipas/LoginRegister/LoginGUI.php"><img src="login.png" alt="shopping cart" height="50" width="50" id="loginlogo"></a>
             </ul>
         </div>
@@ -33,6 +32,7 @@
                     <th>Product Price</th>
                     <th>Product Quantity</th>
                     <th>Product Type</th>
+                    <th>Delete</th>
                 </tr>
             </thead>
             <tbody>
@@ -66,16 +66,32 @@
                         echo "<td>" . ($row['productprice'] * $row['productqty']) . "</td>";
                         echo "<td>" . $row['productqty'] . "</td>";
                         echo "<td>" . $row['producttype'] . "</td>";
+                        echo "<td><input type='checkbox' class='delete-checkbox' data-productname='" . $row['productname'] . "'></td>";
                         echo "</tr>";
                     }
                 } else {
-                    echo "<tr><td colspan='5'>No order added.</td></tr>";
+                    echo "<tr><td colspan='6'>No order added.</td></tr>";
                 }
 
                 $conn->close();
                 ?>
             </tbody>
         </table>
+        <button id="delete-button">Delete Selected</button>
     </section>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('delete-button').addEventListener('click', function () {
+                var checkboxes = document.querySelectorAll('.delete-checkbox:checked');
+                checkboxes.forEach(function (checkbox) {
+                    var productName = checkbox.dataset.productname;
+                    // Perform AJAX request to delete the product from the cart
+                    // You can send productName to your server-side script to handle deletion
+                    // For demonstration, let's just remove the row from the table
+                    checkbox.closest('tr').remove();
+                });
+            });
+        });
+    </script>
 </body>
 </html>
