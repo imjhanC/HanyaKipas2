@@ -36,11 +36,12 @@
             if ($conn->connect_error) {
                 die("Connection failed: " . $conn->connect_error);
             }
-            
+
+            session_start();
             //check if user is login or not
-            if($_SESSION['login'] != 1){
-                echo '<script> alert("PLEASE LOGIN BEFORE PURCHASING!")';
-                header("refresh: 5; url = ../../HanyaKipas2/LoginRegister/LoginGUI.php");
+            if(!isset($_SESSION['login'])){
+                echo '<script> alert("PLEASE LOGIN BEFORE PURCHASING!") </script>';
+                header("refresh: 5; url = ../../HanyaKipas/LoginRegister/LoginGUI.php");
                 die();
             }else{
                 //Pull Session variable named cartItems and push it to cart

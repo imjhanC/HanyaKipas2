@@ -36,6 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Set username and email into session variables
             $_SESSION['username'] = $row['username'];
             $_SESSION['email'] = $row['emailaddress'];
+
         } else {
             // Password is not valid
             echo "InvalidPassword";

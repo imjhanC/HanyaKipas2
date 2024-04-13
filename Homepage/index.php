@@ -1,7 +1,3 @@
-<?php
-    session_start();
-?>
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -78,13 +74,25 @@
                     </div>
                     <a href="#xxx"><img src="shopping-cart.png" alt="shopping cart" height =50 width =50></a></img>
                     <div class="dropdown">
-                        <a href="../../HanyaKipas/LoginRegister/LoginGUI.php">
-                            <img src="login.png" alt="shopping cart" height="50" width="50" id="loginlogo" onclick="toggleDropdown()">
-                        </a>
-                        <div class="dropdown-content" id="dropdownContent">
-                            <a href="#">Account Info</a>
-                            <a href="../../HanyaKipas2/LoginRegister/logout.php">Logout</a>
-                        </div>
+                    <?php
+session_start();
+if(!isset($_SESSION['login'])){
+    // Not logged in
+    echo '<a href="../../HanyaKipas/LoginRegister/LoginGUI.php">
+            <img src="login.png" alt="shopping cart" height="50" width="50" id="loginlogo" onclick="toggleDropdown()">
+         </a>';
+} else {
+    // Logged in
+    echo '<a>
+            <img src="login.png" alt="shopping cart" height="50" width="50" id="loginlogo" onclick="toggleDropdown()">
+         </a>
+         <div class="dropdown-content" id="dropdownContent" style="display:block;">
+            <a href="#">Account Info</a>
+            <a href="../../HanyaKipas2/LoginRegister/logout.php">Logout</a>
+         </div>';
+}
+?>
+
                     </div>
                 </ul>
             </div>

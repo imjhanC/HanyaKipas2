@@ -10,6 +10,10 @@ CREATE TABLE user (
     UNIQUE KEY `emailaddress` (`emailaddress`)
 );
 
+INSERT INTO `user` (`username`, `emailaddress`, `password`) VALUES ('HanyaCheng', 'chengjiahan@hanyakipas.com', 'JiaHan1222222'); 
+INSERT INTO `user` (`username`, `emailaddress`, `password`) VALUES ('HanyaKwen', 'KyeWen@hanyakipas.com', 'KyeWen1222222');
+INSERT INTO `user` (`username`, `emailaddress`, `password`) VALUES ('HanyaJun', 'ZhanJun@hanyakipas.com', 'ZhanJun1222222');
+
 CREATE TABLE product (
     `productname` VARCHAR(50) NOT NULL,
     `productprice` INT(11) NOT NULL,
