@@ -78,6 +78,7 @@
             </tbody>
         </table>
         <button id="delete-button">Delete Selected</button>
+        <a id="confirm-button" href="../../HanyaKipas/Products/checkout.php">Confirm Purchase</a>
     </section>
     <script>
         document.addEventListener('DOMContentLoaded', function () {

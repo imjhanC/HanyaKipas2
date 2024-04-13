@@ -83,31 +83,22 @@
             <br>
             <br>
             <br>
-            <form action="form.php" method="post">
+            <form action="final.php" method="post">
                     <div class="form-group">
-                        <label for="name">Full name:</label>
-                        <input type="text" id="name" name="name" placeholder="Your full name goes here.." pattern="[A-Za-z\s]+" title="Please enter a valid name (letters and spaces only)" required>
+                        <label for="customername">Full name:</label>
+                        <input type="text" id="customername" name="customername" placeholder="Enter your full name goes here.." pattern="[A-Za-z\s]+" title="Please enter a valid name (letters and spaces only)" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="customerdesc">Order description:</label>
+                        <textarea id="customerdesc" name="customerdesc" placeholder="Type your order needs like : deliver to doorstep..." required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="customershipAddress">Deliver address:</label>
+                        <input type="text" id="customershipAddress" name="customershipAddress" placeholder="Enter your deliver address.." required>
                     </div>
                     <div class="form-group">
                         <label for="cnumber">Contact number:</label>
                         <input type="text" id="cnumber" name="cnumber" placeholder="Contact number goes here.." pattern="[0-9]+" title="Please enter a valid contact number (numbers only)" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email Address:</label>
-                        <input type="text" id="email" name="email" placeholder="Email Address goes here.." pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}" title="Please enter a valid email address" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="enquiry">Purpose:</label>
-                        <select id="enquiry" name="enquiry">
-                            <option value="General enquiry">General Enquiry</option>
-                            <option value="Complaint">Complaint</option>
-                            <option value="Suggestion">Suggestion</option>
-                            <option value="Others">Others</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="subject">Subject:</label>
-                        <textarea id="subject" name="subject" placeholder="Type here.." style="height:200px"></textarea>
                     </div>
                     <input type="submit" value="Submit">
                 </form>

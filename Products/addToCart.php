@@ -17,6 +17,9 @@ $productPrice = $_POST['productPrice'];
 $productQty = $_POST['productQty'];
 $productType = $_POST['productType'];
 
+// Ensure productQty is at least 1
+$productQty = max(1, intval($productQty));
+
 // Check if the item already exists in the cart
 $sql = "SELECT * FROM cart WHERE productname = '$productName'";
 $result = $conn->query($sql);
@@ -24,7 +27,7 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     // Update quantity if the item exists
     $row = $result->fetch_assoc();
-    $newQty = $row['productqty'] + 1;
+    $newQty = max(1, $row['productqty'] + $productQty); // Ensure newQty is at least 1
     $updateSql = "UPDATE cart SET productqty = '$newQty' WHERE productname = '$productName'";
     if ($conn->query($updateSql) === TRUE) {
         echo "Quantity updated successfully";

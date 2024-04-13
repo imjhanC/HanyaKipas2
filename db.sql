@@ -32,17 +32,15 @@ CREATE TABLE enquiry (
 );
 
 
-CREATE TABLE order (
-    `customerName` VARCHAR(50) NOT NULL,
-    `customerDesc` VARCHAR(50) NOT NULL,
-    `customerShipAddress` VARCHAR(250) NOT NULL,
-    `customerContactNum` VARCHAR(50) NOT NULL,
-    `productimage` MEDIUMBLOB,
-    `productprice` INT(11) NOT NULL,
-    `productname` VARCHAR(50) NOT NULL,
-    `productdesc` VARCHAR(255) NOT NULL,
-    `producttype` VARCHAR(50) NOT NULL,
-    `productqty` INT(11) NOT NULL
+CREATE TABLE orders (
+    customerName VARCHAR(50) NOT NULL,
+    customerDesc VARCHAR(50) NOT NULL,
+    customerShipAddress VARCHAR(250) NOT NULL,
+    customerContactNum VARCHAR(50) NOT NULL,
+    productPrice INT(11) NOT NULL,
+    productName VARCHAR(50) NOT NULL,
+    productType VARCHAR(50) NOT NULL,
+    productQty INT(11) NOT NULL
 );
 
 CREATE TABLE cart (
