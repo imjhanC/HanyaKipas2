@@ -18,6 +18,18 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Platypi:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" rel="stylesheet">
 	</head>
 	<body>
 		<!-- navigation bar -->
@@ -82,7 +94,7 @@
         <section id='product-display'>
             <h1 id='msg1'> Let's make the process much more quicker !</h1>
             <div class="btn-container">
-                <button class="btn" data-type="">
+            <button class="btn" data-type="">
                     <svg height="24" width="24" fill="#FFFFFF" viewBox="0 0 24 24" data-name="Layer 1" id="Layer_1" class="sparkle">
                         <path d="M10,21.236,6.755,14.745.264,11.5,6.755,8.255,10,1.764l3.245,6.491L19.736,11.5l-6.491,3.245ZM18,21l1.5,3L21,21l3-1.5L21,18l-1.5-3L18,18l-3,1.5ZM19.333,4.667,20.5,7l1.167-2.333L24,3.5,21.667,2.333,20.5,0,19.333,2.333,17,3.5Z"></path>
                     </svg>
@@ -136,6 +148,11 @@
                     echo "<div class='product-card'>";
                     echo "<img src='data:image/jpeg;base64," . base64_encode($row['productimage']) . "' alt='Product Image' class='product-image'>";
                     echo "<h1>" . $row['productname'] . "</h1>";
+                    echo "<p> RM : ". $row['productprice'] . "</p>";
+                    echo "<p> Description : ". $row['productdesc'] . "</p>";
+                    echo "<p> Product type : ". $row['producttype'] . "</p>";
+                    echo "<p> Quantity : ". $row['productqty'] . "</p>";
+                    echo "<button class='add-to-cart-btn' data-product-id='" . $row['id'] . "'>Add to Cart</button>";
                     echo "</div>";
                     $counter++;
                     // Break the loop after displaying the first four products horizontally
@@ -149,6 +166,11 @@
                     echo "<div class='product-card'>";
                     echo "<img src='data:image/jpeg;base64," . base64_encode($row['productimage']) . "' alt='Product Image' class='product-image'>";
                     echo "<h1>" . $row['productname'] . "</h1>";
+                    echo "<p> RM : ". $row['productprice'] . "</p>";
+                    echo "<p> Description : ". $row['productdesc'] . "</p>";
+                    echo "<p> Product type : ". $row['producttype'] . "</p>";
+                    echo "<p> Quantity : ". $row['productqty'] . "</p>";
+                    echo "<button class='add-to-cart-btn' data-product-id='" . $row['id'] . "'>Add to Cart</button>";
                     echo "</div>";
                 }
 
