@@ -1,4 +1,5 @@
 <?php
+session_start();
 // Establish connection to database
 $servername = "localhost:3308";
 $username = "root";
@@ -30,9 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($signInPassword === $stored_password) {
             // Password is valid
             echo "Valid";
-
-            session_start();
-            $_SESSION['login'] = "1";
+            $_SESSION['login'] = true;
             // Set username and email into session variables
             $_SESSION['username'] = $row['username'];
             $_SESSION['email'] = $row['emailaddress'];
