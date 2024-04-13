@@ -22,7 +22,10 @@
     </nav>
     <br>
     <section id='shopping-cart'>
-    <table border="1">
+        <h1 id='shopping-header'>Shopping cart</h1>
+        <br>
+        <br>
+        <table border="1">
             <thead>
                 <tr>
                     <th>Product Name</th>
@@ -49,7 +52,9 @@
                 }
 
                 // Fetch products from database
-                $sql = "SELECT productname,productimage,productprice,productqty,producttype FROM cart";
+                $sql = "SELECT c.productname, p.productimage, c.productprice, c.productqty, c.producttype 
+                        FROM cart c 
+                        INNER JOIN product p ON c.productname = p.productname";
                 $result = $conn->query($sql);
 
                 // Display products
@@ -58,7 +63,7 @@
                         echo "<tr>";
                         echo "<td>" . $row['productname'] . "</td>";
                         echo "<td><img src='data:image/jpeg;base64," . base64_encode($row['productimage']) . "' style='width: 100px; height: 100px;' /></td>";
-                        echo "<td>" . $row['productprice'] . "</td>";
+                        echo "<td>" . ($row['productprice'] * $row['productqty']) . "</td>";
                         echo "<td>" . $row['productqty'] . "</td>";
                         echo "<td>" . $row['producttype'] . "</td>";
                         echo "</tr>";

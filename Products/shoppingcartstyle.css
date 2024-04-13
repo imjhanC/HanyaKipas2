@@ -67,3 +67,31 @@ footer,.copyright{
     font-size: 1.0rem;
     color: lightblue;
 }
+
+
+/* Table style */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    border: 3px solid black; /* Set border thickness and style */
+}
+
+/* Table header style */
+thead th {
+    border: 3px solid black; /* Set border thickness and style */
+    padding: 8px;
+    text-align: left;
+    background-color: #f2f2f2; /* Add background color for header */
+}
+
+/* Table cell style */
+td {
+    border: 3px solid black; /* Set border thickness and style */
+    padding: 8px;
+    text-align: left;
+}
+
+/* Alternate row color */
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
