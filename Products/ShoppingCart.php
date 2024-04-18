@@ -57,22 +57,25 @@
                         INNER JOIN product p ON c.productname = p.productname";
                 $result = $conn->query($sql);
 
+                $total = 0;
+
                 // Display products
                 if ($result->num_rows > 0) {
                     while($row = $result->fetch_assoc()) {
                         echo "<tr>";
                         echo "<td>" . $row['productname'] . "</td>";
                         echo "<td><img src='data:image/jpeg;base64," . base64_encode($row['productimage']) . "' style='width: 100px; height: 100px;' /></td>";
-                        echo "<td>" . ($row['productprice'] * $row['productqty']) . "</td>";
+                        echo "<td> RM " . ($row['pSSSSSroductprice'] * $row['productqty']) . "</td>";
                         echo "<td>" . $row['productqty'] . "</td>";
                         echo "<td>" . $row['producttype'] . "</td>";
                         echo "<td><input type='checkbox' class='delete-checkbox' data-productname='" . $row['productname'] . "'></td>";
                         echo "</tr>";
+                        $total += ($row['productprice'] * $row['productqty']);
                     }
                 } else {
                     echo "<tr><td colspan='6'>No order added.</td></tr>";
                 }
-
+                echo "<tr><td colspan='5' style='text-align: right;'>Total:</td><td>RM " . $total . "</td></tr>";
                 $conn->close();
                 ?>
             </tbody>
