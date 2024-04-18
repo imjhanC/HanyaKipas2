@@ -80,7 +80,7 @@ footer,.copyright{
 table {
     margin-left: 20px;
     border-collapse: collapse;
-    width: 50%;
+    width: 140%;
     border: 3px solid black; /* Set border thickness and style */
 }
 
@@ -108,4 +108,96 @@ tbody tr:nth-child(even) {
     margin-top: 40px;
     margin-left: 100px;
     margin-right: 100px;
+}
+
+/* New CSS for the content containers */
+.content-container {
+    display: flex;
+}
+
+.table-container,
+.form-container {
+    flex: 1;
+}
+
+.form-container {
+    margin-left: 500px; /* Adjust as needed */
+}
+
+
+#checkout-h1{
+    font-family: "Kanit", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 4.0em;
+}
+
+#form-h1{
+    font-family: "Kanit", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 3.1em;
+}
+
+.form-group label {
+    font-family: "Kanit", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 1.5em;
+    margin-bottom: 5px;
+}
+
+
+.form-group input[type="text"],
+.form-group textarea {
+    font-family: "Kanit", sans-serif;
+    font-size: 1.2em;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+}
+
+
+#button{
+    background-color: #fff;
+    border: 2px solid #000;
+    box-sizing: border-box;
+    color: #000;
+    cursor: pointer;
+    display: inline-flex;
+    fill: #000;
+    font-family: Inter,sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    height: 48px;
+    justify-content: center;
+    letter-spacing: -.8px;
+    line-height: 24px;
+    min-width: 240px;
+    outline: 0;
+    padding: 0 17px;
+    text-align: center;
+    text-decoration: none;
+    transition: all .3s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    margin-left: 180px;
+}
+
+#button:focus {
+    color: #171e29;
+}
+  
+#button:hover {
+    border-color: #06f;
+    color: #06f;
+    fill: #06f;
+}
+  
+#button:active {
+    border-color: #06f;
+    color: #06f;
+    fill: #06f;
 }
