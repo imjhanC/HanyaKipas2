@@ -1,3 +1,7 @@
+<?php
+session_start(); // Start the session at the beginning of the PHP script
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -59,7 +63,29 @@
             </div>
             <div>
                 <ul class="nav-links">
-                    <a href="../../HanyaKipas/LoginRegister/LoginGUI.php"><img src="login.png" alt="shopping cart" height="50" width="50" id="loginlogo"></a>
+                <?php 
+                        if(isset($_SESSION['login']) && $_SESSION['login'] === true){
+                            // logged in
+                            $username = $_SESSION['username'];
+                            echo '<a>
+                                    <img src="login.png" alt="shopping cart" height="50" width="50" id="loginlogo" onclick="myFunction()">
+                                 </a>
+                                 <div id="myDropdown" class="dropdown-content">
+                                    <br>
+                                    <h1> Welcome ' . $username . ' ! </h1>
+                                    <br>
+                                    <hr>
+                                    <a href="logout.php">Logout </a>
+                                </div>';
+                                    //$username = $_SESSION['username']; // Retrieve username from session variable
+                                    //echo "Welcome, $username!";
+                        } else {
+                            // not logged in
+                            echo '<a href="../../HanyaKipas/LoginRegister/LoginGUI.php">
+                                    <img src="login.png" alt="shopping cart" height="50" width="50" id="loginlogo">
+                                    </a>';
+                        }
+                    ?>
                 </ul>
             </div>
         </nav>
@@ -158,5 +184,16 @@
                 </div>
             </div>
         </div>
+        <script>
+            function myFunction() {
+            var dropdown = document.getElementById("myDropdown");
+            // Toggle the display of the dropdown content
+            if (dropdown.style.display === "block") {
+                dropdown.style.display = "none";
+            } else {
+                dropdown.style.display = "block";
+            }
+        }
+        </script>
     </body>
 </html>

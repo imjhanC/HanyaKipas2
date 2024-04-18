@@ -36,7 +36,7 @@ if ($result->num_rows > 0) {
         // Check if product name is empty
         if (empty($productName)) {
             // Redirect user back to ProductPage.php
-            header("Location: ProductPage.php");
+            header("Location: index.php");
             exit; // Stop further execution
         }
         
@@ -62,5 +62,5 @@ if ($result->num_rows > 0) {
 $conn->close();
 
 // Redirect to checkout page
-header("Location: checkout.php");
+header("Location: redirect.php");
 ?>
