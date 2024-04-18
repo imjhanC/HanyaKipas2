@@ -1,3 +1,7 @@
+<?php
+session_start(); // Start the session at the beginning of the PHP script
+?>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -30,6 +34,24 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 	</head>
 	<body>
 		<!-- navigation bar -->
@@ -86,7 +108,29 @@
                         
                     </div>
                     <a href="../../HanyaKipas/Products/ShoppingCart.php"><img src="shopping-cart.png" alt="shopping cart" height =50 width =50></a><span id="cartItemCount" class="cart-counter"></span></img>
-                    <a href="../../HanyaKipas/LoginRegister/LoginGUI.php"><img src="login.png" alt="shopping cart" height =50 width =50 id="loginlogo"></a></img>
+                    <?php 
+                        if(isset($_SESSION['login']) && $_SESSION['login'] === true){
+                            // logged in
+                            $username = $_SESSION['username'];
+                            echo '<a>
+                                    <img src="login.png" alt="shopping cart" height="50" width="50" id="loginlogo" onclick="myFunction()">
+                                 </a>
+                                 <div id="myDropdown" class="dropdown-content">
+                                    <br>
+                                    <h1> Welcome ' . $username . ' ! </h1>
+                                    <br>
+                                    <hr>
+                                    <a href="logout.php">Logout </a>
+                                </div>';
+                                    //$username = $_SESSION['username']; // Retrieve username from session variable
+                                    //echo "Welcome, $username!";
+                        } else {
+                            // not logged in
+                            echo '<a href="../../HanyaKipas/LoginRegister/LoginGUI.php">
+                                    <img src="login.png" alt="shopping cart" height="50" width="50" id="loginlogo">
+                                    </a>';
+                        }
+                    ?>
                 </ul>
             </div>
         </nav>
@@ -176,6 +220,8 @@
             // Close connection
             $conn->close();
             ?>
+            <br>
+            <br>
         </section>
         <footer class="footer">
             <div id="copyright">
@@ -306,6 +352,16 @@
                 });
             });
         });
+
+        function myFunction() {
+            var dropdown = document.getElementById("myDropdown");
+            // Toggle the display of the dropdown content
+            if (dropdown.style.display === "block") {
+                dropdown.style.display = "none";
+            } else {
+                dropdown.style.display = "block";
+            }
+        }
     </script>
 
 	</body>

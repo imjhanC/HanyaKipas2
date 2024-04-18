@@ -469,3 +469,34 @@ footer,.copyright{
     font-size: 1.0rem;
     color: #4F95DA;
 }
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    margin-left:550px;
+    margin-top: 50px;
+    border: solid 3px;
+    border-color: #0066ff;
+}
+
+.dropdown-content h1{
+    font-size: 30px;
+    font-family: "Lobster", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-family: "Prompt", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
