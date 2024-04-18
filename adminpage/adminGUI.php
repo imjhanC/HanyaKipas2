@@ -23,8 +23,6 @@
     <div class="sidebar">
         <a href="adminGUI.php">Home</a>
         <a href="createGUI.php">Create product</a>
-        <a href="updateGUI.php">Update product</a>
-        <a href="deleteGUI.php">Delete product</a>
         <a href="../../HanyaKipas/Products/ProductPage.php">Preview product page</a>
     </div>
     <div class="info-home">
