@@ -32,7 +32,7 @@ nav{
 
 /* brand logo */
 .desktop-nav ,.text-logo{
-    padding-right: 45%;
+    padding-right: 37%;
     padding-left: 5%;
     font-family: "Kanit", sans-serif;
     font-weight: 700;
@@ -43,8 +43,12 @@ nav{
 
 /* login logo */
 #loginlogo {
-    margin-left: 620px; /* Push the login logo to the right */
-    margin-right: 15%; /* Add some right margin */
+    margin-left: 5px; /* Push the login logo to the right * 620px/
+    /*margin-right: 15%; /* Add some right margin */ 
+}
+
+#shopping{
+    padding-left: 180px;
 }
 /* search bar */
 /*.nav-links input[type="text"]{
@@ -53,6 +57,21 @@ nav{
     font-size: 16px;
     border-style:solid;
 }*/
+.home{
+    box-shadow: inset 0 0 0 0 #3cb1ff;
+    font-size: 25px;
+    color: #ffffff;
+    font-family: "Dosis", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+}
+
+.home:hover {
+    color: #00d9ff;
+    box-shadow: inset 200px 0 0 0 #9c54d6;;
+}
 
 /*Slidershow containers*/
 .slider {
@@ -111,6 +130,14 @@ nav{
 	font-size: 1.6em;
 }
 
+#customer {
+    text-align: center;
+	font-family: "Quicksand", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 500;
+	font-style: normal;
+	font-size: 1.3em;
+}
 #ceiling-fan,
 #table-fan,
 #bladeless-fan {
@@ -208,4 +235,17 @@ footer,.copyright{
 
 .show {
     display: block;
+}
+
+#zhanjun{
+    width: 400px;
+    height: 500px;
+    object-fit: cover;
+    padding-left: 370px;
+    border-radius: 10%;
+}
+
+#zhanjun-info h1{
+    font-family: "Mulish", sans-serif;
+    font-weight: 800; 
 }

@@ -16,7 +16,9 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
-
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap" rel="stylesheet">
     </head>
     <body>
         <!-- navigation bar -->
@@ -26,14 +28,22 @@
             </div>
             <div>
                 <ul class="nav-links">
-                    <a href="#xxx"><img src="shopping-cart.png" alt="shopping cart" height =50 width =50></a></img>
+
+                    <a href="xxx" class="home">Home</a>
+                    <a href="xxx" class="home">Products</a>
+                    <a href="xxx" class="home">Contact Us</a>
+                    <a href="xxx" class="home">About HanyaKipas</a>
+
+                    <a href="../../HanyaKipas/Products/ShoppingCart.php"><img src="shopping-cart.png" alt="shopping cart" id="shopping" height =50 width =50></a></img>
+                         
+                    
                     <?php 
                         session_start();
                         if(isset($_SESSION['login']) && $_SESSION['login'] === true){
                             // logged in
                             echo '<a>
                                     <img src="login.png" alt="shopping cart" height="50" width="50" id="loginlogo">
-                                    </a>';
+                                 </a>';
                                     $username = $_SESSION['username']; // Retrieve username from session variable
                                     echo "Welcome, $username!";
                         } else {
@@ -85,13 +95,48 @@
             </div>
         </section>
         <br>
-        <section id= "tipsandmanual">
-            <div>
-
+        <br>
+        <br>
+        <section id= "customer">
+            <div id="customer">
+                <h1> Let's see HanyaKipas customer testimonial ! </h1>
             </div>
-            <div>
-                
+            <br>
+            <br>
+            <br>
+            <div id='zhanjun'>
+                <img src="zhanjun.jpg" alt="zhanjun" id="zhanjun"></img>
             </div>
+            <br>
+            <div id='zhanjun-info'>
+                <h1> Lee Zhan Jun </h1>
+                <p> I love HanyaKipas because their delivery service is prompt and OMG they gave me another free fan tho ! How nice of them . I definitely recommend fans from them !<p>
+            </div>
+            <br>
+            <br>
+            <br>
+            <div id='zhanjun'>
+                <img src="kyewen.jpg" alt="kyewen" id="zhanjun"></img>
+            </div>
+            <br>
+            <div id='zhanjun-info'>
+                <h1> Tan Kye Wen </h1>
+                <p> I ordered a fan from HanyaKipas and they delivered the fan within 10 minutes to my doorsteps.<p>
+            </div>
+            <br>
+            <br>
+            <br>
+            <div id='zhanjun'>
+                <img src="jhan.jpg" alt="jhan" id="zhanjun"></img>
+            </div>
+            <br>
+            <div id='zhanjun-info'>
+                <h1> Cheng Jia Han </h1>
+                <p> Look at the fan beside me , HanyaKipas is the BESTTT<p>
+            </div>
+            <br>
+            <br>
+            <br>
         </section>
         <footer class="footer">
             <div id="copyright">
