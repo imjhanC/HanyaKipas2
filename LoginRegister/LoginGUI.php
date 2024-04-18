@@ -25,6 +25,8 @@
                 <input type="password" name="signInPassword" placeholder="Password" required />
                 <p id="status-message-login"></p>
                 <button type="submit">Sign In</button>
+                <br>
+                <a href='xxx' >Admin login</a>
             </form>
         </div>
         <div class="overlay-container">
