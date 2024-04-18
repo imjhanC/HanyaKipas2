@@ -134,6 +134,12 @@
         <div class="product-info-container">
             <!-- Product info will be displayed here -->
         </div>
+        <<br>
+        <br>
+        <a class="button-59" role="button" href="/HanyaKipas/Products/ProductPage.php">Buy now !</a>
+        <br>
+        <br>
+        <br>
         <br>
         <div class="btn-container">
             <button class="btn" onclick="navigateToPage('../../../HanyaKipas/Homepage/Intro/cellingfan.php')">
