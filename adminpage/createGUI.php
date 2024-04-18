@@ -74,7 +74,6 @@
         <table border="1">
             <thead>
                 <tr>
-                    <th>ID</th>
                     <th>Product name</th>
                     <th>Product price</th>
                     <th>Product description</th>

@@ -92,19 +92,19 @@
                 <img src="cellingfan.png" alt="cellingfan"></img>
                 <p>Natural, Comfortable and Relaxing</p>
                 <br>
-                <a href="#">View More >></a>
+                <a href="../../HanyaKipas/Products/ProductPage.php">View More >></a>
             </div>
             <div id="table-fan">
                 <img src="tablefan.png" alt="tablefan"></img>
                 <p>Feel a Greater Breeze Experience</p>
                 <br>
-                <a href="#">View More >></a>
+                <a href="../../HanyaKipas/Products/ProductPage.php">View More >></a>
             </div>
             <div id="bladeless-fan">
                 <img src="bladelessfan.png" alt="bladelessfan"></img>
                 <p>Cool Comfort, No Blades Attached </p>
                 <br>
-                <a href="#">View More >></a>
+                <a href="../../HanyaKipas/Products/ProductPage.php">View More >></a>
             </div>
         </section>
         <br>

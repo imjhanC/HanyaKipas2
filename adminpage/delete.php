@@ -19,7 +19,7 @@ if(isset($_POST['submit'])) {
     if(isset($_POST['delete'])) {
         // Loop through each selected checkbox and delete the corresponding product
         foreach($_POST['delete'] as $product_id) {
-            $sql = "DELETE FROM product WHERE id = $product_id";
+            $sql = "DELETE FROM product WHERE productname = $product_id";
             if ($conn->query($sql) !== TRUE) {
                 echo "Error deleting record: " . $conn->error;
             }

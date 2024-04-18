@@ -175,7 +175,7 @@ session_start(); // Start the session at the beginning of the PHP script
             }
 
             // Fetch products from database
-            $sql = "SELECT id ,productname, productprice, productdesc, producttype, productqty, productimage FROM product";
+            $sql = "SELECT productname, productprice, productdesc, producttype, productqty, productimage FROM product";
             $result = $conn->query($sql);
 
             // Display products
