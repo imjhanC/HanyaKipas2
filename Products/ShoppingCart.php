@@ -80,6 +80,18 @@
         <button id="delete-button">Delete</button>
         <button id="confirm-button">Confirm Purchase</button>
     </section>
+    <footer class="footer">
+        <div id="copyright">
+            <p>Copyright &#169 HanyaKipas Sdn. Bhd 2024</p>
+            <p>HanyaKipas Sdn. Bhd || The best fan selling company in Malaysia (Co No.6969)</p>
+        </div>
+        <br>
+        <div id="footerbuttons">
+            <a href="../../HanyaKipas/Homepage/index.php">Home</a>
+            <a href="../../HanyaKipas/Products/ProductPage.php" id="productfooter">Products</a>
+            <a href="../../HanyaKipas/ContactUs/ContactUs.php" id="contactUsfooter">Contact Us</a>
+        </div>
+    </footer>
     <script>
     document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('delete-button').addEventListener('click', function () {

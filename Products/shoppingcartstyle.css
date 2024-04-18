@@ -103,3 +103,27 @@ td {
 tbody tr:nth-child(even) {
     background-color: #f2f2f2;
 }
+
+/*footer*/
+footer{
+    left: 0;
+    bottom: 0;
+    padding: 20px 0;
+    background-color: black;
+    color: white;
+    width: 100%;
+    text-align: center;
+}
+footer,.copyright{
+    font-family: 'Gill Sans',sans-serif;
+    font-size: 1.2em;
+    
+}
+
+#footerbuttons a{
+    display: grid;
+    gap : 20px 2em;
+    margin-bottom: 10px;
+    font-size: 1.0rem;
+    color: #4F95DA;
+}

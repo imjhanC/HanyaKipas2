@@ -445,3 +445,27 @@ footer,.copyright{
     padding: 5px 8px; /* Adjust padding as needed */
     font-size: 12px; /* Adjust font size as needed */
 }
+
+/*footer*/
+footer{
+    left: 0;
+    bottom: 0;
+    padding: 20px 0;
+    background-color: black;
+    color: white;
+    width: 100%;
+    text-align: center;
+}
+footer,.copyright{
+    font-family: 'Gill Sans',sans-serif;
+    font-size: 1.2em;
+    
+}
+
+#footerbuttons a{
+    display: grid;
+    gap : 20px 2em;
+    margin-bottom: 10px;
+    font-size: 1.0rem;
+    color: #4F95DA;
+}

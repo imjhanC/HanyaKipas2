@@ -32,7 +32,7 @@ nav{
 
 /* brand logo */
 .desktop-nav ,.text-logo{
-    padding-right: 37%;
+    padding-right: 47%;
     padding-left: 5%;
     font-family: "Kanit", sans-serif;
     font-weight: 700;
@@ -45,6 +45,7 @@ nav{
 #loginlogo {
     margin-left: 5px; /* Push the login logo to the right * 620px/
     /*margin-right: 15%; /* Add some right margin */ 
+    cursor: pointer;
 }
 
 #shopping{
@@ -202,40 +203,14 @@ footer,.copyright{
     
 }
 
-#footerbuttons{
+#footerbuttons a{
     display: grid;
-    gap : 20px 1em;
+    gap : 20px 2em;
+    margin-bottom: 10px;
     font-size: 1.0rem;
-    color: lightblue;
+    color: #4F95DA;
 }
 
-
-/* Dropdown menu */
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-}
-
-.dropdown-content p, .dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    font-family: "Mulish", sans-serif;
-    font-weight: 600;
-}
-
-.dropdown-content a:hover {
-    background-color: #ddd;
-}
-
-.show {
-    display: block;
-}
 
 #zhanjun{
     width: 400px;
@@ -249,3 +224,36 @@ footer,.copyright{
     font-family: "Mulish", sans-serif;
     font-weight: 800; 
 }
+
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    margin-left:550px;
+    margin-top: 50px;
+    border: solid 3px;
+    border-color: #0066ff;
+}
+
+.dropdown-content h1{
+    font-size: 30px;
+    font-family: "Lobster", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-family: "Prompt", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+  
