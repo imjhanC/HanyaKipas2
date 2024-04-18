@@ -1,3 +1,7 @@
+<?php
+session_start(); // Start the session at the beginning of the PHP script
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,6 +10,50 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
     <title>HanyaKipas: Shopping Cart</title>
     <link rel="stylesheet" href="shoppingcartstyle.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Platypi:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- navigation bar -->
@@ -15,7 +63,29 @@
         </div>
         <div>
             <ul class="nav-links">
-                <a href="../../HanyaKipas/LoginRegister/LoginGUI.php"><img src="login.png" alt="shopping cart" height="50" width="50" id="loginlogo"></a>
+                    <?php 
+                        if(isset($_SESSION['login']) && $_SESSION['login'] === true){
+                            // logged in
+                            $username = $_SESSION['username'];
+                            echo '<a>
+                                    <img src="login.png" alt="shopping cart" height="50" width="50" id="loginlogo" onclick="myFunction()">
+                                 </a>
+                                 <div id="myDropdown" class="dropdown-content">
+                                    <br>
+                                    <h1> Welcome ' . $username . ' ! </h1>
+                                    <br>
+                                    <hr>
+                                    <a href="logout.php">Logout </a>
+                                </div>';
+                                    //$username = $_SESSION['username']; // Retrieve username from session variable
+                                    //echo "Welcome, $username!";
+                        } else {
+                            // not logged in
+                            echo '<a href="../../HanyaKipas/LoginRegister/LoginGUI.php">
+                                    <img src="login.png" alt="shopping cart" height="50" width="50" id="loginlogo">
+                                    </a>';
+                        }
+                    ?>
             </ul>
         </div>
     </nav>
@@ -65,7 +135,7 @@
                         echo "<tr>";
                         echo "<td>" . $row['productname'] . "</td>";
                         echo "<td><img src='data:image/jpeg;base64," . base64_encode($row['productimage']) . "' style='width: 100px; height: 100px;' /></td>";
-                        echo "<td> RM " . ($row['pSSSSSroductprice'] * $row['productqty']) . "</td>";
+                        echo "<td> RM " . ($row['productprice'] * $row['productqty']) . "</td>";
                         echo "<td>" . $row['productqty'] . "</td>";
                         echo "<td>" . $row['producttype'] . "</td>";
                         echo "<td><input type='checkbox' class='delete-checkbox' data-productname='" . $row['productname'] . "'></td>";
@@ -75,13 +145,19 @@
                 } else {
                     echo "<tr><td colspan='6'>No order added.</td></tr>";
                 }
-                echo "<tr><td colspan='5' style='text-align: right;'>Total:</td><td>RM " . $total . "</td></tr>";
+                echo "<tr><td colspan='5' style='text-align: right;'>Cart Totals:</td><td>RM " . $total . "</td></tr>";
                 $conn->close();
                 ?>
             </tbody>
         </table>
-        <button id="delete-button">Delete</button>
-        <button id="confirm-button">Confirm Purchase</button>
+        <br>
+        <br>
+        <div id="button">
+            <button id="delete-button">Delete</button>
+            <button id="confirm-button">Confirm Purchase</button>
+        </div>
+        <br>
+        <br>
     </section>
     <footer class="footer">
         <div id="copyright">
@@ -134,6 +210,15 @@
             }
         });
     });
+    function myFunction() {
+        var dropdown = document.getElementById("myDropdown");
+        // Toggle the display of the dropdown content
+        if (dropdown.style.display === "block") {
+            dropdown.style.display = "none";
+        } else {
+            dropdown.style.display = "block";
+        }
+    }
 </script>
 
 

@@ -74,13 +74,17 @@ footer,.copyright{
 
 #shopping-header{
     margin-left: 20px;
-    font-size: 3.0em;
+    font-size: 5.5em;
+    text-align: center;
+    font-family: "Kanit", sans-serif;
+    font-weight: 500;
+    font-style: normal;
 }
 /* Table style */
 table {
-    margin-left: 20px;
+    margin-left: 70px;
     border-collapse: collapse;
-    width: 50%;
+    width: 90%;
     border: 3px solid black; /* Set border thickness and style */
 }
 
@@ -90,13 +94,15 @@ thead th {
     padding: 8px;
     text-align: left;
     background-color: #f2f2f2; /* Add background color for header */
+    font-size: 1.6em;
 }
 
 /* Table cell style */
 td {
     border: 3px solid black; /* Set border thickness and style */
     padding: 8px;
-    text-align: left;
+    text-align: center;
+    font-size: 1.4em;
 }
 
 /* Alternate row color */
@@ -126,4 +132,125 @@ footer,.copyright{
     margin-bottom: 10px;
     font-size: 1.0rem;
     color: #4F95DA;
+}
+
+#confirm-button{
+    background-color: #fff;
+    border: 2px solid #000;
+    box-sizing: border-box;
+    color: #000;
+    cursor: pointer;
+    display: inline-flex;
+    fill: #000;
+    font-family: Inter,sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    height: 48px;
+    justify-content: center;
+    letter-spacing: -.8px;
+    line-height: 24px;
+    min-width: 140px;
+    outline: 0;
+    padding: 0 17px;
+    text-align: center;
+    text-decoration: none;
+    transition: all .3s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+#confirm-button:focus {
+    color: #171e29;
+}
+  
+#confirm-button:hover {
+    border-color: #06f;
+    color: #06f;
+    fill: #06f;
+}
+  
+#confirm-button:active {
+    border-color: #06f;
+    color: #06f;
+    fill: #06f;
+}
+  
+
+#delete-button{
+    background-color: #fff;
+    border: 2px solid #000;
+    box-sizing: border-box;
+    color: #000;
+    cursor: pointer;
+    display: inline-flex;
+    fill: #000;
+    font-family: Inter,sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    height: 48px;
+    justify-content: center;
+    letter-spacing: -.8px;
+    line-height: 24px;
+    min-width: 140px;
+    outline: 0;
+    padding: 0 17px;
+    text-align: center;
+    text-decoration: none;
+    transition: all .3s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+#delete-button:focus {
+    color: #171e29;
+}
+  
+#delete-button:hover {
+    border-color: #06f;
+    color: #06f;
+    fill: #06f;
+}
+  
+#delete-button:active {
+    border-color: #06f;
+    color: #06f;
+    fill: #06f;
+}
+  
+#button{
+   margin-left: 1470px;
+}
+
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    margin-left:550px;
+    margin-top: 50px;
+    border: solid 3px;
+    border-color: #0066ff;
+}
+
+.dropdown-content h1{
+    font-size: 30px;
+    font-family: "Lobster", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-family: "Prompt", sans-serif;
+    font-weight: 500;
+    font-style: normal;
 }
