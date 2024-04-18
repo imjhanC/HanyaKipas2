@@ -25,7 +25,7 @@
         <a href="createGUI.php">Create product</a>
         <a href="updateGUI.php">Update product</a>
         <a href="deleteGUI.php">Delete product</a>
-        <a href="#about">Preview product page</a>
+        <a href="../../HanyaKipas/Products/ProductPage.php">Preview product page</a>
     </div>
     <div class="info-home">
         <br>
@@ -42,6 +42,13 @@
                 <canvas id="productChart" width="400" height="100"></canvas>
             </section>
         </div>
+        <br>
+        <br>
+        <hr>
+        <br>
+        <br>
+        <h1> Current order </h1>
+    
     </div>
 
     <!-- JavaScript code for Chart.js -->

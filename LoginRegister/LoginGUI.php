@@ -26,7 +26,7 @@
                 <p id="status-message-login"></p>
                 <button type="submit">Sign In</button>
                 <br>
-                <a href='xxx' >Admin login</a>
+                <a href='../../HanyaKipas/adminpage/adminlogin.php' >Admin login</a>
             </form>
         </div>
         <div class="overlay-container">

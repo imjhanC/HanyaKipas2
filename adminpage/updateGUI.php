@@ -25,7 +25,7 @@
         <a href=createGUI.php>Create product</a>
         <a href=updateGUI.php>Update product</a>
         <a href=deleteGUI.php>Delete product</a>
-        <a href=#about>Preview product page </a>
+        <a href=../../HanyaKipas/Products/ProductPage.php>Preview product page </a>
     </div>
     <div class="info-home">
     <div>    
@@ -96,7 +96,7 @@ if(isset($_POST['submit'])) {
 }
 
 // Fetch data to display
-$sql = "SELECT id, productname, productprice, productdesc, producttype, productqty, productimage FROM product";
+$sql = "SELECT  productname, productprice, productdesc, producttype, productqty, productimage FROM product";
 $result = $conn->query($sql);
 
 // Display images
@@ -105,7 +105,6 @@ if ($result->num_rows > 0) {
     echo "<table border='1'>";
     echo "<thead>";
     echo "<tr>";
-    echo "<th>ID</th>";
     echo "<th>Product name</th>";
     echo "<th>Product price</th>";
     echo "<th>Product description</th>";
@@ -118,14 +117,13 @@ if ($result->num_rows > 0) {
 
     while($row = $result->fetch_assoc()) {
         echo "<tr>";
-        echo "<td>" . $row['id'] . "</td>";
         echo "<td>" . $row['productname'] . "</td>";
         echo "<td>" . $row['productprice'] . "</td>";
         echo "<td>" . $row['productdesc'] . "</td>";
         echo "<td>" . $row['producttype'] . "</td>";
         echo "<td>" . $row['productqty'] . "</td>";
         echo "<td><img src='data:image/jpeg;base64," . base64_encode($row['productimage']) . "' style='width: 100px; height: 100px;' /></td>";
-        echo "<td><input type='radio' name='update_id' value='" . $row['id'] . "'></td>";
+        echo "<td><input type='radio' name='update_id' value='" . $row['productname'] . "'></td>";
         echo "</tr>";
     }
 

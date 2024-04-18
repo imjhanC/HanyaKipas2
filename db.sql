@@ -50,3 +50,10 @@ CREATE TABLE cart (
     `productqty` INT(11) NOT NULL,
     `producttype` VARCHAR(50) NOT NULL
 );
+
+CREATE TABLE admin (
+    `username` VARCHAR(50) NOT NULL,
+    `password` VARCHAR(50) NOT NULL
+);
+
+INSERT INTO `admin` (`username`, `password`) VALUES ('chengkipas', 'kipascheng1234');

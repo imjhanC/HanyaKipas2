@@ -25,7 +25,7 @@
         <a href=createGUI.php>Create product</a>
         <a href=updateGUI.php>Update product</a>
         <a href=deleteGUI.php>Delete product</a>
-        <a href=#about>Preview product page </a>
+        <a href=../../HanyaKipas/Products/ProductPage.php>Preview product page </a>
     </div>
     <div class="info-home">
         <br>
@@ -42,7 +42,6 @@
             <thead>
                 <tr>
                     <th></th>
-                    <th>ID</th>
                     <th>Product name</th>
                     <th>Product price</th>
                     <th>Product description</th>
@@ -68,15 +67,14 @@
                 }
 
                 // Fetch images from database
-                $sql = "SELECT id,productname, productprice, productdesc, producttype, productqty, productimage FROM product";
+                $sql = "SELECT productname, productprice, productdesc, producttype, productqty, productimage FROM product";
                 $result = $conn->query($sql);
 
                 // Display images
                 if ($result->num_rows > 0) {
                     while($row = $result->fetch_assoc()) {
                         echo "<tr>";
-                        echo "<td><input type='checkbox' class='checkbox' name='delete[]' value='" . $row['id'] . "'></td>";
-                        echo "<td>" . $row['id'] . "</td>";
+                        echo "<td><input type='checkbox' class='checkbox' name='delete[]' value='" . $row['productname'] . "'></td>";
                         echo "<td>" . $row['productname'] . "</td>";
                         echo "<td>" . $row['productprice'] . "</td>";
                         echo "<td>" . $row['productdesc'] . "</td>";
@@ -86,7 +84,7 @@
                         echo "</tr>";
                     }
                 } else {
-                    echo "<tr><td colspan='7'>No images uploaded.</td></tr>";
+                    echo "<tr><td colspan='6'>No images uploaded.</td></tr>";
                 }
 
                 $conn->close();
