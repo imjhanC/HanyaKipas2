@@ -143,6 +143,7 @@ session_start(); // Start the session at the beginning of the PHP script
                         $total += ($row['productprice'] * $row['productqty']);
                     }
                 } else {
+                    echo "<tr><td colspan='6' style='height: 250px;'>&nbsp;</td></tr>";
                     echo "<tr><td colspan='6'>No order added.</td></tr>";
                 }
                 echo "<tr><td colspan='5' style='text-align: right;'>Cart Totals:</td><td>RM " . $total . "</td></tr>";
