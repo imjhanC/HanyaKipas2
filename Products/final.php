@@ -36,7 +36,7 @@ if ($result->num_rows > 0) {
         // Check if product name is empty
         if (empty($productName)) {
             // Redirect user back to ProductPage.php
-            header("Location: index.php");
+            header("Location: ProductPage.php");
             exit; // Stop further execution
         }
         
