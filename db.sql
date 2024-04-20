@@ -1,6 +1,6 @@
 CREATE DATABASE hanyakipas CHARACTER SET utf8 COLLATE utf8_general_ci;
 
-USE hanyakipas
+USE hanyakipas;
 
 CREATE TABLE `user` (
     `username` VARCHAR(50) NOT NULL,
