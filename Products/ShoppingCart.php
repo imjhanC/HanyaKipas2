@@ -204,6 +204,8 @@ session_start(); // Start the session at the beginning of the PHP script
             var noOrders = (document.querySelectorAll('#shopping-cart tbody tr').length === 0);
             if (noOrders) {
                 // Redirect to the product page since there are no orders to confirm
+                document.getElementById('confirm-button').disabled = true;
+                document.getElementById('confirm-button').textContent = 'No Orders to Confirm';
                 window.location.href = "ProductPage.php";
             } else {
                 // Redirect to the checkout page
